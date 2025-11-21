@@ -128,6 +128,119 @@ This step performs analysis on the cleaned and validated CSV data. The analytics
 * Top recipe authors and most active creator
 
 
+Top ingredients:
+  ingredient_name  count
+0            rice     21
+1          garlic     19
+2           onion     16
+3            salt     15
+4             oil     13
+5          tomato     13
+6          pepper     12
+7          chilli     12
+8          ginger      8
+
+Average prep time: 12.43 minutes
+
+Difficulty distribution:
+difficulty
+easy             11
+medium           11
+hard              7
+invalid_level     1
+Name: count, dtype: int64
+
+Cuisine vs Recipe Difficulty Distribution (%):
+difficulty     easy   hard  invalid_level  medium
+cuisine
+Bengali       44.44  22.22           0.00   33.33
+Hyderabadi    50.00  16.67          16.67   16.67
+Punjabi       42.86  14.29           0.00   42.86
+South Indian  12.50  37.50           0.00   50.00
+
+Avg rating of Recipe by Recipe difficulty:
+      difficulty  avg_rating_by_difficulty
+0           easy                  4.168750
+1           hard                  3.928889
+2  invalid_level                       NaN
+3         medium                  4.127083
+
+Avg recipe engagement by recipe difficulty:
+      difficulty  avg_engagement_by_difficulty
+0           easy                    621.636364
+1           hard                    712.857143
+2  invalid_level                      0.000000
+3         medium                    534.636364
+
+Correlation: prep time vs total likes = -0.093
+No meaningful correlation
+
+Top viewed recipes:
+   recipe_id               title  total_views
+5      r_006           Veg Kurma         1354
+10     r_011          Egg Bhurji         1136
+12     r_013       Chicken Curry         1008
+7      r_008  Hyderabadi Biryani          979
+0      r_001           Pav Bhaji          922
+6      r_007                Upma          817
+25     r_026           Pav Bhaji          738
+4      r_005       Pulao Special          731
+27     r_028         Idli Sambar          600
+29     r_030        Tomato Rasam          558
+
+Top ingredients by engagement:
+  ingredient_name  engagement
+0            rice       12888
+1          garlic       12225
+2            salt        9285
+3          tomato        7980
+4             oil        7935
+5           onion        7330
+6          pepper        6946
+7          chilli        6253
+8          ginger        5967
+
+Average rating per cuisine:
+        cuisine  avg_rating_by_cuisine
+0       Punjabi                   4.36
+1    Hyderabadi                   4.14
+2  South Indian                   3.94
+3       Bengali                   3.92
+
+Top engagement rate recipes:
+   recipe_id               title  engagement_rate
+4      r_005       Pulao Special          1078.00
+6      r_007                Upma          1012.00
+18     r_019  Hyderabadi Biryani           513.00
+25     r_026           Pav Bhaji           440.50
+7      r_008  Hyderabadi Biryani           397.00
+10     r_011          Egg Bhurji           382.00
+21     r_022       Pulao Special           378.50
+16     r_017         Idli Sambar           326.00
+22     r_023         Idli Sambar           325.33
+5      r_006           Veg Kurma           277.00
+
+Top cook attempt recipes:
+   recipe_id               title  total_cook_attempts
+5      r_006           Veg Kurma                   45
+10     r_011          Egg Bhurji                   22
+17     r_018        Tomato Rasam                   22
+6      r_007                Upma                   21
+22     r_023         Idli Sambar                   21
+4      r_005       Pulao Special                   21
+12     r_013       Chicken Curry                   19
+15     r_016          Egg Bhurji                   17
+0      r_001           Pav Bhaji                   17
+7      r_008  Hyderabadi Biryani                   16
+
+Top 5 users or authors that created most recipes :
+  created_by  recipe_count
+2    user_04             6
+1    user_03             5
+7    user_10             5
+4    user_07             5
+6    user_09             4
+
 
 
 
