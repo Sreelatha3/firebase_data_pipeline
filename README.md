@@ -58,6 +58,76 @@ It includes:
                 * likes: The number of likes given by the users to this recipe.
                 * recipe_id : Unique Identifier for each of the recipes that are in the recipes collection.
 
+## 📊 Visual Insights
+
+Below are the key insights generated from the analytics visualisations:
+#### 1.🥗 Top Ingredients Used
+
+<img width="3000" height="1800" alt="top_ingredients" src="https://github.com/user-attachments/assets/41235070-44d1-4645-a2e1-7e79ed915945" />
+
+Shows which ingredients appear most frequently across recipes, revealing common cooking patterns.
+
+#### 2.🎚️ Difficulty Distribution
+
+<img width="2100" height="2100" alt="difficulty_distribution" src="https://github.com/user-attachments/assets/170fdf07-a518-4539-972c-89ace0e0774d" />
+
+A breakdown of how many recipes are Easy, Medium, or Hard, indicating overall complexity of the dataset.
+
+
+#### 3. 🌍 Cuisine vs Difficulty
+
+<img width="3600" height="1800" alt="cuisine_vs_difficulty_heatmap" src="https://github.com/user-attachments/assets/8c4d353f-2b9e-4b30-b3ea-004ee592eee0" />
+
+
+Heatmap showing the distribution of recipe difficulties across different cuisines.
+
+#### 4. ⭐ Average Rating by Difficulty
+
+<img width="2400" height="1800" alt="avg_rating_by_difficulty" src="https://github.com/user-attachments/assets/ff838e7f-1d8d-48af-8f65-fde8e9c99e5f" />
+
+Highlights which difficulty level tends to receive higher average user ratings.
+
+#### 5.🔥 Engagement by Difficulty
+
+<img width="2400" height="1800" alt="engagement_by_difficulty" src="https://github.com/user-attachments/assets/a0eb4f22-d2bb-46e9-b897-6ab4e995eac5" />
+
+Shows engagement (likes + views) by difficulty level to understand user interest.
+
+#### 6.⏱️❤️ Prep Time vs Likes
+
+<img width="2700" height="2100" alt="preptime_vs_likes" src="https://github.com/user-attachments/assets/fac28c0a-601a-4d8c-9939-7b2401b548f8" />
+
+Scatter plot showing how preparation time influences recipe popularity.
+
+#### 7. 👀 Top Viewed Recipes
+
+<img width="3000" height="2100" alt="top_viewed_recipes" src="https://github.com/user-attachments/assets/25bfa9db-5c07-4b6d-8333-b1fec4f987c7" />
+
+Top 10 recipes that received the highest number of views.
+
+#### 8. 🧄🔥 Ingredient Engagement
+
+<img width="3000" height="2100" alt="top_ingredient_engagement" src="https://github.com/user-attachments/assets/5e42de9b-52b3-4a03-90a1-252072b6aac5" />
+
+Identifies which ingredients contribute most to recipe engagement.
+
+#### 9. 🍱 Average Rating per Cuisine
+
+<img width="3000" height="2100" alt="avg_rating_by_cuisine" src="https://github.com/user-attachments/assets/c79e7f00-3ebd-4d69-bd9a-fb32816c4f06" />
+
+Shows which cuisines have the highest average ratings from users.
+
+#### 10. 📈 Top Engagement Rate Recipes
+
+<img width="3000" height="2100" alt="top_engagement_rate" src="https://github.com/user-attachments/assets/bc7013e6-6e87-4892-ba60-d878aab1baf5" />
+
+Recipes with the highest engagement relative to number of servings.
+
+#### 11. 🍳 Most Cooked Recipes
+
+<img width="3000" height="2100" alt="top_cook_attempts" src="https://github.com/user-attachments/assets/0e1f5511-dd8b-4008-a4e3-339233b437f0" />
+
+Top recipes based on number of cook attempts recorded.
 
 ## Setup and Installation:
 
