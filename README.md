@@ -1,166 +1,358 @@
-# Firebase Recipe Analytics Pipeline
+Firebase-Based Recipe Analytics Pipeline — README
 
-## Project Overview
-This project implements an end-to-end ETL / ELT pipeline using Firebase Firestore as the source system. It extracts recipe data, validates it, normalizes it into relational CSVs, and runs analytics to generate actionable insights.
+Project goal: build a small end-to-end ETL pipeline that ingests recipe data from Firebase Firestore, normalizes it to CSV, validates data quality, and runs analytics to produce insights (top ingredients, prep time stats, engagement, correlations, etc.). This README explains the data model, how to run the pipeline, where outputs live, validation rules, and how to reproduce the diagrams.
 
-Primary goals:
-- Demonstrate data modeling and normalization from nested Firestore documents
-- Implement validation rules and produce a structured validation report
-- Produce normalized CSV outputs and analytics summaries for evaluation
+Table of contents
 
-## Repository structure
+Repository layout
 
-firebase_pipeline/
-├─ exported_data/
-│ ├─ raw_interactions.json
-│ ├─ raw_recipes.json
-│ └─ raw_users.json
-├─ normalized/
-│ ├─ recipes.csv
-│ ├─ users.csv
-│ ├─ ingredients.csv
-│ ├─ steps.csv
-│ └─ interactions.csv
-├─ validation_report/
-│ └─ validation_report.json
-├─ analytics.py
-├─ export_data.py
-├─ insert_my_recipe.py
-├─ insert_synthetic_data.py
-├─ transformation.py
-└─ validate_data.py
+Data model (ERD-style)
 
+Diagrams (visuals)
 
-> **Note:** The repository uses the chronological workflow used during development:
-> 1. Insert / seed data to Firestore (optional)  
-> 2. Export Firestore collections to `exported_data/` (`export_data.py`)  
-> 3. Transform JSON → normalized CSVs (`transformation.py`) → outputs to `normalized/`  
-> 4. Validate normalized CSVs (`validate_data.py`) → JSON report under `validation_report/`  
-> 5. Run analytics (`analytics.py`) → prints and saves insights
+Requirements & setup
 
----
+How to run (full pipeline)
 
-## Data model (high-level)
-Normalized relational schema produced by transformation:
+Individual scripts & what they do
 
-**recipes.csv**
-- `recipe_id` (PK), `title`, `description`, `servings`, `prep_time_minutes`, `cook_time_minutes`, `difficulty` (easy|medium|hard), `cuisine`, `tags` (CSV string), `created_by`, `created_at`
-- Aggregated interaction columns added after join: `total_views`, `total_likes`, `avg_rating`, `total_cook_attempts` (these are derived by aggregating interactions.csv)
+Validation rules & report format
 
-**ingredients.csv**
-- `recipe_id` (FK → recipes.recipe_id), `ingredient_name`, `quantity`, `unit`
+Analytics & expected outputs
 
-**steps.csv**
-- `recipe_id` (FK), `step_order`, `step_text`
+Deliverables produced by this repo
 
-**interactions.csv**
-- event-level rows with `avg_rating`, `cook_attempt`, `likes`, `recipe_id`, `views`
+Known issues, data quality notes & suggestions for improvement
 
-**users.csv**
-- `user_id`, `name`, `email`, `signup_date`, `location`
+Extension ideas
 
-Design decisions:
-- Ingredients and steps are modeled as separate child tables to enforce 1:N relationships and ease validation.
-- Interactions are kept event-level to allow richer aggregation later; summary metrics are computed during analytics.
+Repository layout
 
----
+(only showing the parts relevant to the ETL pipeline)
 
-## How to run (commands)
+D:\Dev\firebase_pipeline\
+├─ src/
+│  └─ ETL/
+│     ├─ extract/
+│     │  ├─ insert_my_recipe.py
+│     │  ├─ insert_synthetic_data.py
+│     │  └─ export_data.py
+│     ├─ transform/
+│     │  └─ transformation.py
+│     ├─ validate/
+│     │  └─ validate_data.py
+│     └─ analytics/
+│        └─ analytics.py
+├─ data/
+│  ├─ exported_data/
+│  │  ├─ raw_recipes.json
+│  │  ├─ raw_users.json
+│  │  └─ raw_interactions.json
+│  └─ normalized_json_data/
+│     ├─ recipes.csv
+│     ├─ ingredients.csv
+│     ├─ steps.csv
+│     └─ interactions.csv
+└─ README.md
 
-1. Install dependencies (Python 3.8+ recommended):
-   ```bash
-     pip install -r requirements.txt
-      # or
-     pip install pandas google-cloud-firestore scipy
+Data model (ERD-style)
 
-2. (Optional) Seed Firestore with your recipe + synthetic data:
-    ```bash
-    python insert_my_recipe.py       # inserts your seed recipe into Firestore
-    python insert_synthetic_data.py  # inserts synthetic recipes, users, interactions
+Entities and key attributes
 
-3. Export Firestore collections to JSON (requires service account key):
-    ```bash
-    # configure service_account_key.json in project root and edit export_data.py credentials path
-    python export_data.py
-    # outputs: exported_data/raw_recipes.json, raw_users.json, raw_interactions.json
+Users
 
-4. Transform exported JSON → normalized CSVs:
-    ```bash
-    python transformation.py
-    # outputs CSVs to normalized/
+user_id (PK)
 
-5. Validate normalized CSVs (produces JSON report):
-    ```bash
-    python validate_data.py
-    # outputs: validation_report/validation_report.json
+name
 
-6. Run analytics:
-    ```bash
-    python analytics.py
-    # prints insights and writes analytics summary CSV
+email
 
+signup_date
 
-** Validation rules (enforced by validate_data.py) **
+location
 
-Required fields present for recipes (title, recipe_id, servings, prep/cook times, difficulty, cuisine, created_by).
+Recipes
 
-Numeric fields must be positive/numeric: servings, prep_time_minutes, cook_time_minutes, ingredient quantity, and interactions numeric fields (views, likes, cook_attempt).
+recipe_id (PK)
 
-Steps and ingredients must exist per recipe (cross-table checks).
+title
 
-Difficulty must be one of easy, medium, hard.
+description
 
-Interactions avg_rating if present must be numeric and in range 0–5.
+servings
 
-The validator produces validation_report/validation_report.json listing valid rows and per-row reasons for invalid rows.
+prep_time_minutes
 
-ETL / Transformation overview
+cook_time_minutes
 
-transformation.py:
+difficulty (enum: easy, medium, hard)
 
-Reads exported_data/raw_recipes.json and exported_data/raw_interactions.json.
+cuisine
 
-Normalizes nested ingredients and steps into ingredients.csv and steps.csv.
+tags (array/string)
 
-Normalizes tags into a comma-separated string in recipes.csv.
+created_by (FK → Users.user_id)
 
-Writes normalized/recipes.csv, normalized/ingredients.csv, normalized/steps.csv, and normalized/interactions.csv.
+created_at
 
-Produces a short transformation report (normalized/transformation_report.json) noting any schema inconsistencies encountered.
+Ingredients (normalized; 1..N per recipe)
 
-Key cleaning steps:
+recipe_id (FK → Recipes.recipe_id)
 
-Coerce numerics where possible; leave blank if uncoercible and allow validator to flag it.
+ingredient_name
 
-Normalize timestamps to ISO format where possible.
+quantity (numeric)
 
-Accept multiple common key names to be robust against export variations.
+unit
 
-Analytics summary (short)
+Steps (ordered; 1..N per recipe)
 
-(Full analytics report included as analytics_report.md.)
+recipe_id (FK → Recipes.recipe_id)
 
-Sample insights from the dataset run:
+step_order (int)
 
-Top ingredients (by frequency): rice (21), garlic (19), onion (16), salt (15), oil (13), tomato (13), pepper (12), chilli (12), ginger (8)
+step_text
 
-Average prep time: 12.43 minutes
+Interactions
 
-Difficulty distribution: easy: 11, medium: 11, hard: 7, invalid_level: 1 (data issue flagged)
+interaction_id (PK; auto gen)
 
-Cuisine vs difficulty %: (table printed by analytics — shows distribution per cuisine)
+recipe_id (FK → Recipes.recipe_id)
 
-Avg rating by difficulty: easy ≈ 4.17, medium ≈ 4.13, hard ≈ 3.93
+views (int)
 
-Engagement by difficulty: hard recipes show relatively higher average engagement (inspect further)
+likes (int)
 
-Correlation (prep time vs likes): r ≈ -0.093 → No meaningful correlation
+avg_rating (float)
 
-Top viewed recipes: (top IDs printed with total_views; e.g., r_006 Veg Kurma: 1354 views, r_011 Egg Bhurji: 1136)
+cook_attempt (int)
 
-Top ingredients by engagement: rice, garlic, salt, tomato, oil — helpful to focus product/content decisions.
+Relationships:
 
-Top creators: user_04 (6 recipes), user_03 (5), etc.
+Users (1) — (N) Recipes
+
+Recipes (1) — (N) Ingredients
+
+Recipes (1) — (N) Steps
+
+Recipes (1) — (N) Interactions
+
+Diagrams (visuals)
+
+A flowchart/diagram was generated and saved locally. Use the following local file path (rendered image of the ETL/architecture diagram):
+
+/mnt/data/A_flowchart_in_the_image_illustrates_a_Firebase-ba.png
 
 
+(You can include this image in your README or docs by referencing the local path above before packaging or when uploading to a docs site.)
 
+Requirements & setup
+
+Create an isolated environment, install required packages, and supply your Firebase service account key.
+
+Python: 3.9+ recommended
+
+Create venv & activate
+
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+
+
+Install dependencies
+
+pip install firebase-admin pandas scipy python-dateutil
+
+
+Place your Firebase service account key JSON at:
+
+D:\Dev\firebase_pipeline\src\ETL\extract\service_account_key.json
+
+
+The scripts call credentials.Certificate("service_account_key.json") from the extract dir. Either cd into that folder before running or update the path in each script.
+
+If you get Firebase auth errors, confirm the service account has Firestore access and the project_id matches your Firestore project.
+
+How to run (full pipeline)
+
+Working directory approach is easiest (scripts expect relative paths used in repo).
+
+Seed Firebase (optional, if you want to reproduce)
+
+Insert a single manual recipe (your recipe)
+
+cd src/ETL/extract
+python insert_my_recipe.py
+
+
+Insert synthetic recipes, users, interactions (creates 30 recipes by default)
+
+python insert_synthetic_data.py
+
+
+Export Firestore collections to JSON
+
+python export_data.py
+
+
+This writes:
+
+data/exported_data/raw_recipes.json
+
+data/exported_data/raw_users.json
+
+data/exported_data/raw_interactions.json
+
+Transform to normalized CSVs
+
+cd ../transform
+python transformation.py
+
+
+This writes normalized CSVs under:
+
+data/normalized_json_data/recipes.csv
+
+data/normalized_json_data/ingredients.csv
+
+data/normalized_json_data/steps.csv
+
+data/normalized_json_data/interactions.csv
+
+and a transformation_report.json summarizing issues
+
+Validate normalized data
+
+cd ../validate
+python validate_data.py
+
+
+Produces: data/validation_report/validation_report.json
+
+Run analytics
+
+cd ../analytics
+python analytics.py
+
+
+Prints insights (top ingredients, avg prep time, difficulty distribution, top viewed recipes, correlation etc.) in console.
+
+Individual scripts & what they do
+
+insert_my_recipe.py
+
+Inserts your primary recipe (r_001) into recipes collection with created_at = SERVER_TIMESTAMP.
+
+insert_synthetic_data.py
+
+Creates synthetic recipes, users, and interactions to populate Firestore for testing. Note: it intentionally injects some bad rows (invalid difficulty strings, negative values, blank ingredient names) to test validator behavior.
+
+export_data.py
+
+Streams Firestore collections and writes JSON files. Contains a small helper to convert Firestore timestamp objects to ISO strings.
+
+transformation.py
+
+Reads exported raw JSON and normalizes to CSV tables. Coerces common formats, heals basic schema differences, logs schema issues in transformation_report.json.
+
+validate_data.py
+
+Loads normalized CSVs, applies validation rules (required fields, numeric positivity, allowed difficulty), cross-table existence checks, and writes validation_report.json.
+
+analytics.py
+
+Loads normalized CSVs and aggregated interactions to produce the 10 analytics outputs described in the assignment. Uses scipy.stats.pearsonr for correlation.
+
+Validation rules & report format
+
+Recipe-level checks
+
+Required fields present: recipe_id, title, description, servings, prep_time_minutes, cook_time_minutes, difficulty, cuisine, created_by
+
+difficulty must be one of: easy, medium, hard
+
+servings, prep_time_minutes, cook_time_minutes must be numeric & non-negative
+
+Ingredient checks
+
+ingredient_name not empty
+
+quantity numeric > 0
+
+unit not empty
+
+Steps checks
+
+step_order numeric > 0
+
+step_text not empty
+
+Cross-table
+
+Each recipe must have at least 1 ingredient and 1 step
+
+Reports
+
+data/normalized_json_data/transformation_report.json — issues reported during transformation
+
+data/validation_report/validation_report.json — lists valid_recipes, recipe_errors, ingredient/step errors and cross-table errors
+
+Analytics & expected outputs
+
+analytics.py produces the following outputs (printed to console and can be adapted to CSV or charts):
+
+Top ingredients by frequency (with counts)
+
+Average preparation time (mean prep_time_minutes)
+
+Difficulty distribution and difficulty vs cuisine breakdown
+
+Average rating by difficulty
+
+Average engagement (views+likes) by difficulty
+
+Pearson correlation between prep_time_minutes and total_likes (reports correlation coefficient & interpretation)
+
+Top viewed recipes (top 10 by total_views)
+
+Ingredients associated with high engagement (sum of engagement per ingredient)
+
+Engagement rate (engagement / servings) and top recipes by engagement rate
+
+Top cook attempts and top recipe authors (by number of recipes)
+
+Outputs are built from:
+
+data/normalized_json_data/recipes.csv
+
+data/normalized_json_data/ingredients.csv
+
+data/normalized_json_data/interactions.csv
+
+Deliverables produced by this repo
+
+When you run the pipeline you will get:
+
+data/exported_data/raw_recipes.json
+
+data/exported_data/raw_users.json
+
+data/exported_data/raw_interactions.json
+
+data/normalized_json_data/recipes.csv
+
+data/normalized_json_data/ingredients.csv
+
+data/normalized_json_data/steps.csv
+
+data/normalized_json_data/interactions.csv
+
+data/normalized_json_data/transformation_report.json
+
+data/validation_report/validation_report.json
+
+Console output from analytics.py (suggest to capture or write to analytics_summary.md/CSV for submission)
+
+Architecture/ETL diagram image at: /mnt/data/A_flowchart_in_the_image_illustrates_a_Firebase-ba.png
