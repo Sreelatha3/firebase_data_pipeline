@@ -129,6 +129,8 @@ Recipes with the highest engagement relative to number of servings.
 
 Top recipes based on number of cook attempts recorded.
 
+#### Deliverables:
+https://docs.google.com/document/d/e/2PACX-1vRTeByDKKNw697PbeUXoKQLmkC8B80OK-6OZLMCTnuVRY1R3lbJWNTUvmTd5K1-CUCpqJJMUxKqEJM1/pub
 ## Setup and Installation:
 
 #### 1. Setup firebase account and get the firestore credentials and save it under the name 'service_account_key.json' 
