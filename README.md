@@ -107,6 +107,8 @@ This step performs analysis on the cleaned and validated CSV data. The analytics
 
 
 *    Top ingredients
+
+
 | ingredient_name | count |
 | --------------- | ----- |
 | rice            | 21    |
