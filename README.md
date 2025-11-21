@@ -23,15 +23,16 @@ It includes:
 ### Data Model:
 
 <img width="1051" height="586" alt="recipes" src="https://github.com/user-attachments/assets/7e55ff92-2286-4e24-804e-e90540758d11" />
-* figure : Entity-Relationsip Diagram for the collections when they are normalized or flattened 
-* Users Collection:
+*  figure : Entity-Relationsip Diagram for the collections when they are normalized or flattened 
+
+*  Users Collection:
    This collection consists of the details about the user like email, location, name, signup_date, user_id .
              * user_id (PK)
              * name
              * email
              * signup_date
              * location
-* Recipes Collection:
+*  Recipes Collection:
    This collection consists of the details about the recipe, including:
               * recipe_id (PK)
               * title
@@ -44,7 +45,7 @@ It includes:
               * tags (array/string)
               * created_by (FK → Users.user_id)
               * created_at
-  * Interactions Collection :
+  *  Interactions Collection :
     The Interaction collection consists of details about the interactions of users with a specific recipe.
                 * avg_rating: Average of ratings of the recipe given by the users who tried out the recipe.
                 * cook_attempt: The number of times users tried this recipe.
