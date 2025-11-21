@@ -6,10 +6,10 @@ Reads:
   exported_data/raw_interactions.json
 
 Writes (normalized CSVs) to:
-  normalized_json_data/recipes.csv
-  normalized_json_data/ingredients.csv
-  normalized_json_data/steps.csv
-  normalized_json_data/interactions.csv
+  data/normalized_json_data/recipes.csv
+  data/normalized_json_data/ingredients.csv
+  data/normalized_json_data/steps.csv
+  data/normalized_json_data/interactions.csv
 
 Also writes:
   normalized_json_data/transformation_report.json
@@ -21,9 +21,9 @@ import csv
 from datetime import datetime
 
 
-RAW_RECIPES = "exported_data/raw_recipes.json"
-RAW_INTERACTIONS = "exported_data/raw_interactions.json"
-OUT_DIR = "normalized_json_data"
+RAW_RECIPES = "data/exported_data/raw_recipes.json"
+RAW_INTERACTIONS = "data/exported_data/raw_interactions.json"
+OUT_DIR = "data/normalized_json_data"
 REPORT_PATH = os.path.join(OUT_DIR, "transformation_report.json")
 
 os.makedirs(OUT_DIR, exist_ok=True)

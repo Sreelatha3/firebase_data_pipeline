@@ -3,4 +3,9 @@ install google-cloud-firestore
 pandas
 numpy
 google-cloud-storage
+scipyfirebase account credentials.json
+install google-cloud-firestore
+pandas
+numpy
+google-cloud-storage
 scipy

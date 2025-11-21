@@ -2,9 +2,9 @@ import pandas as pd
 from scipy.stats import pearsonr
 
 # Load CSV files
-recipes = pd.read_csv("normalized_json_data/recipes.csv")
-interactions = pd.read_csv("normalized_json_data/interactions.csv")
-ingredients = pd.read_csv("normalized_json_data/ingredients.csv")
+recipes = pd.read_csv("data/normalized_json_data/recipes.csv")
+interactions = pd.read_csv("data/normalized_json_data/interactions.csv")
+ingredients = pd.read_csv("data/normalized_json_data/ingredients.csv")
 
 # Aggregate interactions per recipe
 numeric_cols = ["views", "likes", "avg_rating", "cook_attempt"]

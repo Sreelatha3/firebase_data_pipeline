@@ -122,10 +122,10 @@ def validate_cross_links(recipes_df, ing_df, steps_df):
 
 # ---------------- MAIN VALIDATION RUNNER ----------------
 
-def run_validation(output_file="validation_report/validation_report.json"):
-    recipes_df = pd.read_csv("normalized_json_data/recipes.csv")
-    ing_df = pd.read_csv("normalized_json_data/ingredients.csv")
-    steps_df = pd.read_csv("normalized_json_data/steps.csv")
+def run_validation(output_file="data/validation_report/validation_report.json"):
+    recipes_df = pd.read_csv("data/normalized_json_data/recipes.csv")
+    ing_df = pd.read_csv("data/normalized_json_data/ingredients.csv")
+    steps_df = pd.read_csv("data/normalized_json_data/steps.csv")
 
     valid_recipes, recipe_errors = validate_recipes(recipes_df)
     valid_ing, ing_errors = validate_ingredients(ing_df)

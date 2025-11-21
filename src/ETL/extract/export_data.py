@@ -42,6 +42,6 @@ def export_collection_to_json(collection_name, output_file):
 
 
 # Export all 3 collections
-export_collection_to_json("recipes", "exported_data/raw_recipes.json")
-export_collection_to_json("users", "exported_data/raw_users.json")
-export_collection_to_json("interactions", "exported_data/raw_interactions.json")
+export_collection_to_json("recipes", "data/exported_data/raw_recipes.json")
+export_collection_to_json("users", "data/exported_data/raw_users.json")
+export_collection_to_json("interactions", "data/exported_data/raw_interactions.json")
