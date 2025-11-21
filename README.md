@@ -104,25 +104,25 @@ This step performs analysis on the cleaned and validated CSV data. The analytics
 
 * Key Insights Produced
 
-Most common ingredients across all recipes
+* Most common ingredients across all recipes
 
-Average preparation time for the dataset
+* Average preparation time for the dataset
 
-Difficulty distribution (easy vs. medium vs. hard)
+* Difficulty distribution (easy vs. medium vs. hard)
 
-Cuisine vs. difficulty breakdown
+* Cuisine vs. difficulty breakdown
 
-Average rating by difficulty
+* Average rating by difficulty
 
-Engagement metrics (views + likes) per difficulty
+* Engagement metrics (views + likes) per difficulty
 
-Correlation between prep time and total likes
+* Correlation between prep time and total likes
 
-Top viewed recipes
+* Top viewed recipes
 
-Ingredients with highest engagement
+* Ingredients with highest engagement
 
-Top recipe authors and most active creator
+* Top recipe authors and most active creator
 
 
 
