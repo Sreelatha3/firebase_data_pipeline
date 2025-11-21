@@ -28,8 +28,8 @@ It includes:
 
 *  Users Collection:
    This collection consists of the details about the user like email, location, name, signup_date, user_id .
-             *  user_id (PK)
-             *  name
+  *  user_id (PK)
+  *  name
              *  email
              *  signup_date
              *  location
