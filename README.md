@@ -17,14 +17,5 @@ It includes:
 
 * Analytics & Insights
 
-## Documentation
-
-The pipeline processes:
-
-Recipes
-
-Users
-
-User Interactions (likes, views, ratings, cook attempts)
-
-The assignment also requires using the candidate's own recipe as seed data — implemented as Sree’s Spaghetti Pasta.
+### Folder structure
+<img width="783" height="652" alt="image" src="https://github.com/user-attachments/assets/48cd9a2d-6f44-479b-9560-aae8085611c7" />
