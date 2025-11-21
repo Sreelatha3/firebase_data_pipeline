@@ -23,6 +23,7 @@ It includes:
 ### Data Model:
 
 <img width="1051" height="586" alt="recipes" src="https://github.com/user-attachments/assets/7e55ff92-2286-4e24-804e-e90540758d11" />
+
 *  figure : Entity-Relationsip Diagram for the collections when they are normalized or flattened 
 
 *  Users Collection:
