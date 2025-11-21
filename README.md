@@ -122,7 +122,143 @@ This step performs analysis on the cleaned and validated CSV data. The analytics
 | ginger          | 8     |
 
 
+*   Average Prep Time
 
+12.43 minutes
+
+
+*   Diffculty Distribution
+
+| difficulty    | count |
+| ------------- | ----- |
+| easy          | 11    |
+| medium        | 11    |
+| hard          | 7     |
+| invalid_level | 1     |
+
+
+*   Cuisine vs Recipe Difficulty Distribution (%)
+
+
+| cuisine      | easy  | hard  | invalid_level | medium |
+| ------------ | ----- | ----- | ------------- | ------ |
+| Bengali      | 44.44 | 22.22 | 0.00          | 33.33  |
+| Hyderabadi   | 50.00 | 16.67 | 16.67         | 16.67  |
+| Punjabi      | 42.86 | 14.29 | 0.00          | 42.86  |
+| South Indian | 12.50 | 37.50 | 0.00          | 50.00  |
+
+
+*   Average Rating by Difficulty
+
+| difficulty    | avg_rating_by_difficulty |
+| ------------- | ------------------------ |
+| easy          | 4.168750                 |
+| hard          | 3.928889                 |
+| invalid_level | NaN                      |
+| medium        | 4.127083                 |
+
+
+*   Average Engagement by Difficulty
+
+| difficulty    | avg_engagement_by_difficulty |
+| ------------- | ---------------------------- |
+| easy          | 621.636364                   |
+| hard          | 712.857143                   |
+| invalid_level | 0.000000                     |
+| medium        | 534.636364                   |
+
+
+*   Correlation: Prep Time vs Total Likes
+  
+| Metric                  | Value                         |
+| ----------------------- | ----------------------------- |
+| Correlation coefficient | **0.033**                    |
+| Interpretation          | **Not strong correlation** |
+
+
+*   Top Viewed Recipes
+
+| recipe_id | title              | total_views |
+| --------- | ------------------ | ----------- |
+| r_006     | Veg Kurma          | 1354        |
+| r_011     | Egg Bhurji         | 1136        |
+| r_013     | Chicken Curry      | 1008        |
+| r_008     | Hyderabadi Biryani | 979         |
+| r_001     | Pav Bhaji          | 922         |
+| r_007     | Upma               | 817         |
+| r_026     | Pav Bhaji          | 738         |
+| r_005     | Pulao Special      | 731         |
+| r_028     | Idli Sambar        | 600         |
+| r_030     | Tomato Rasam       | 558         |
+
+
+*   Top Ingredients by Engagement
+
+| ingredient_name | engagement |
+| --------------- | ---------- |
+| rice            | 12888      |
+| garlic          | 12225      |
+| salt            | 9285       |
+| tomato          | 7980       |
+| oil             | 7935       |
+| onion           | 7330       |
+| pepper          | 6946       |
+| chilli          | 6253       |
+| ginger          | 5967       |
+
+
+*   Average Rating per Cuisine
+
+| cuisine      | avg_rating_by_cuisine |
+| ------------ | --------------------- |
+| Punjabi      | 4.36                  |
+| Hyderabadi   | 4.14                  |
+| South Indian | 3.94                  |
+| Bengali      | 3.92                  |
+
+
+*   Top Engagement Rate Recipes
+
+
+| recipe_id | title              | engagement_rate |
+| --------- | ------------------ | --------------- |
+| r_005     | Pulao Special      | 1078.00         |
+| r_007     | Upma               | 1012.00         |
+| r_019     | Hyderabadi Biryani | 513.00          |
+| r_026     | Pav Bhaji          | 440.50          |
+| r_008     | Hyderabadi Biryani | 397.00          |
+| r_011     | Egg Bhurji         | 382.00          |
+| r_022     | Pulao Special      | 378.50          |
+| r_017     | Idli Sambar        | 326.00          |
+| r_023     | Idli Sambar        | 325.33          |
+| r_006     | Veg Kurma          | 277.00          |
+
+
+*   Top Cook Attempt Recipes
+
+| recipe_id | title              | total_cook_attempts |
+| --------- | ------------------ | ------------------- |
+| r_006     | Veg Kurma          | 45                  |
+| r_011     | Egg Bhurji         | 22                  |
+| r_018     | Tomato Rasam       | 22                  |
+| r_007     | Upma               | 21                  |
+| r_023     | Idli Sambar        | 21                  |
+| r_005     | Pulao Special      | 21                  |
+| r_013     | Chicken Curry      | 19                  |
+| r_016     | Egg Bhurji         | 17                  |
+| r_001     | Pav Bhaji          | 17                  |
+| r_008     | Hyderabadi Biryani | 16                  |
+
+
+*   Top 5 Creators (Most Recipes Created)
+
+| created_by | recipe_count |
+| ---------- | ------------ |
+| user_04    | 6            |
+| user_03    | 5            |
+| user_10    | 5            |
+| user_07    | 5            |
+| user_09    | 4            |
 
 
 
