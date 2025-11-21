@@ -1,0 +1,1805 @@
+[
+    {
+        "views": 301,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Pav Bhaji",
+        "created_at": "2025-11-21T07:17:18.364219",
+        "tags": [
+            "spicy"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "rice",
+                "quantity": 0.8,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.2,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.9,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.7,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.3,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 0.8,
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 26,
+        "difficulty": "hard",
+        "servings": 4,
+        "created_by": "user_03",
+        "avg_rating": 4.1,
+        "recipe_id": "r_001",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 12,
+        "total_likes": 11
+    },
+    {
+        "views": 214,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Tomato Rasam",
+        "created_at": "2025-11-21T07:17:21.359858",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.6,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 0.6,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.7,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.5,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.9,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.4,
+                "unit": "tbsp"
+            }
+        ],
+        "cook_time_minutes": 16,
+        "difficulty": "easy",
+        "servings": 4,
+        "created_by": "user_04",
+        "avg_rating": 3.8,
+        "recipe_id": "r_002",
+        "cuisine": "Hyderabadi",
+        "prep_time_minutes": 13,
+        "total_likes": 54
+    },
+    {
+        "views": 230,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Pulao Special",
+        "created_at": "2025-11-21T07:17:21.821831",
+        "tags": [
+            "quick"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.9,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.6,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.0,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.2,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 37,
+        "difficulty": "medium",
+        "servings": 1,
+        "created_by": "user_08",
+        "avg_rating": 3.7,
+        "recipe_id": "r_003",
+        "cuisine": "Hyderabadi",
+        "prep_time_minutes": 10,
+        "total_likes": 52
+    },
+    {
+        "views": 100,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            },
+            {
+                "text": "Step 6: Follow cooking instruction 6...",
+                "step_order": 6
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Masala Dosa",
+        "created_at": "2025-11-21T07:17:23.013917",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.5,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.8,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.5,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "ginger",
+                "quantity": 0.6,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "",
+                "quantity": "-1",
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 37,
+        "difficulty": "medium",
+        "servings": 5,
+        "created_by": "user_07",
+        "avg_rating": 4.6,
+        "recipe_id": "r_004",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 6,
+        "total_likes": 119
+    },
+    {
+        "views": 295,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Pulao Special",
+        "created_at": "2025-11-21T07:17:23.577317",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "ginger",
+                "quantity": 0.8,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.1,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 0.8,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.2,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.5,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.9,
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 34,
+        "difficulty": "easy",
+        "servings": 1,
+        "created_by": "user_09",
+        "avg_rating": 3.4,
+        "recipe_id": "r_005",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 16,
+        "total_likes": 141
+    },
+    {
+        "views": 488,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "",
+                "step_order": ""
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Veg Kurma",
+        "created_at": "2025-11-21T07:17:24.639139",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "oil",
+                "quantity": 0.9,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.0,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 0.5,
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 18,
+        "difficulty": "medium",
+        "servings": 6,
+        "created_by": "user_02",
+        "avg_rating": 4.4,
+        "recipe_id": "r_006",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 5,
+        "total_likes": 32
+    },
+    {
+        "views": 27,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            },
+            {
+                "text": "Step 6: Follow cooking instruction 6...",
+                "step_order": 6
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Upma",
+        "created_at": "2025-11-21T07:17:25.193579",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.4,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.8,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.8,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.7,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 27,
+        "difficulty": "easy",
+        "servings": 1,
+        "created_by": "user_02",
+        "avg_rating": 3.3,
+        "recipe_id": "r_007",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 9,
+        "total_likes": 49
+    },
+    {
+        "views": 275,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            },
+            {
+                "text": "Step 6: Follow cooking instruction 6...",
+                "step_order": 6
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Hyderabadi Biryani",
+        "created_at": "2025-11-21T07:17:26.252887",
+        "tags": [
+            "traditional"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.8,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.0,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.7,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.3,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 0.7,
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 33,
+        "difficulty": "medium",
+        "servings": 3,
+        "created_by": "user_09",
+        "avg_rating": 3.7,
+        "recipe_id": "r_008",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 9,
+        "total_likes": 91
+    },
+    {
+        "views": 207,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Lemon Rice",
+        "created_at": "2025-11-21T07:17:26.821724",
+        "tags": [
+            "spicy"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.7,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.8,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.8,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.7,
+                "unit": "tbsp"
+            }
+        ],
+        "cook_time_minutes": 11,
+        "difficulty": "medium",
+        "servings": 6,
+        "created_by": "user_04",
+        "avg_rating": 3.1,
+        "recipe_id": "r_009",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 14,
+        "total_likes": 71
+    },
+    {
+        "views": 409,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            },
+            {
+                "text": "Step 6: Follow cooking instruction 6...",
+                "step_order": 6
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Tomato Rasam",
+        "created_at": "2025-11-21T07:17:27.887939",
+        "tags": [
+            "traditional"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "chilli",
+                "quantity": 0.6,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.8,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.6,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 20,
+        "difficulty": "medium",
+        "servings": 4,
+        "created_by": "user_06",
+        "avg_rating": 3.6,
+        "recipe_id": "r_010",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 20,
+        "total_likes": 83
+    },
+    {
+        "views": 487,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Egg Bhurji",
+        "created_at": "2025-11-21T07:17:28.457620",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.7,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.7,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 1.7,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 25,
+        "difficulty": "hard",
+        "servings": 4,
+        "created_by": "user_10",
+        "avg_rating": 3.3,
+        "recipe_id": "r_011",
+        "cuisine": "Hyderabadi",
+        "prep_time_minutes": 19,
+        "total_likes": 121
+    },
+    {
+        "views": 52,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Egg Bhurji",
+        "created_at": "2025-11-21T07:17:29.518371",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.6,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.5,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "ginger",
+                "quantity": 0.5,
+                "unit": "tbsp"
+            }
+        ],
+        "cook_time_minutes": 12,
+        "difficulty": "hard",
+        "servings": 4,
+        "created_by": "user_10",
+        "avg_rating": 4.7,
+        "recipe_id": "r_012",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 19,
+        "total_likes": 113
+    },
+    {
+        "views": 342,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Chicken Curry",
+        "created_at": "2025-11-21T07:17:30.040820",
+        "tags": [
+            "quick"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "pepper",
+                "quantity": 0.8,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 0.8,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "ginger",
+                "quantity": 1.5,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 15,
+        "difficulty": "easy",
+        "servings": 6,
+        "created_by": "user_10",
+        "avg_rating": 3.7,
+        "recipe_id": "r_013",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 15,
+        "total_likes": 149
+    },
+    {
+        "views": 192,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Pav Bhaji",
+        "created_at": "2025-11-21T07:17:30.364821",
+        "tags": [
+            "traditional"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "pepper",
+                "quantity": 0.8,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 0.6,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.1,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.6,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 10,
+        "difficulty": "easy",
+        "servings": 1,
+        "created_by": "user_09",
+        "avg_rating": 4.0,
+        "recipe_id": "r_014",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 11,
+        "total_likes": 57
+    },
+    {
+        "views": 479,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Chole Bhature",
+        "created_at": "2025-11-21T07:17:30.735361",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "ginger",
+                "quantity": 0.8,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 0.8,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 0.5,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 0.7,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.5,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 26,
+        "difficulty": "hard",
+        "servings": 3,
+        "created_by": "user_10",
+        "avg_rating": 3.9,
+        "recipe_id": "r_015",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 8,
+        "total_likes": 89
+    },
+    {
+        "views": 488,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "",
+                "step_order": ""
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Egg Bhurji",
+        "created_at": "2025-11-21T07:17:31.182531",
+        "tags": [
+            "high-protein"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.2,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 0.9,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.3,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.5,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.0,
+                "unit": "tbsp"
+            }
+        ],
+        "cook_time_minutes": 31,
+        "difficulty": "hard",
+        "servings": 3,
+        "created_by": "user_07",
+        "avg_rating": 4.5,
+        "recipe_id": "r_016",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 16,
+        "total_likes": 108
+    },
+    {
+        "views": 197,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Idli Sambar",
+        "created_at": "2025-11-21T07:17:31.627178",
+        "tags": [
+            "quick"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "oil",
+                "quantity": 0.5,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 2.0,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.7,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 40,
+        "difficulty": "medium",
+        "servings": 1,
+        "created_by": "user_08",
+        "avg_rating": 3.1,
+        "recipe_id": "r_017",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 18,
+        "total_likes": 117
+    },
+    {
+        "views": 183,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Tomato Rasam",
+        "created_at": "2025-11-21T07:17:31.941522",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.4,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 0.5,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.1,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.2,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 0.7,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 23,
+        "difficulty": "medium",
+        "servings": 6,
+        "created_by": "user_03",
+        "avg_rating": 3.4,
+        "recipe_id": "r_018",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 7,
+        "total_likes": 82
+    },
+    {
+        "views": 56,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Hyderabadi Biryani",
+        "created_at": "2025-11-21T07:17:32.270488",
+        "tags": [
+            "spicy"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.2,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.3,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 1.3,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.5,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 0.8,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.6,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "",
+                "quantity": "-1",
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 32,
+        "difficulty": "easy",
+        "servings": 1,
+        "created_by": "user_09",
+        "avg_rating": 4.8,
+        "recipe_id": "r_019",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 12,
+        "total_likes": 30
+    },
+    {
+        "views": 73,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Idli Sambar",
+        "created_at": "2025-11-21T07:17:32.594228",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "chilli",
+                "quantity": 0.6,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.4,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.4,
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 40,
+        "difficulty": "invalid_level",
+        "servings": 3,
+        "created_by": "user_03",
+        "avg_rating": 4.2,
+        "recipe_id": "r_020",
+        "cuisine": "Hyderabadi",
+        "prep_time_minutes": 13,
+        "total_likes": 64
+    },
+    {
+        "views": 443,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Curd Rice",
+        "created_at": "2025-11-21T07:17:32.916772",
+        "tags": [
+            "quick"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "tomato",
+                "quantity": 0.8,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.3,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.1,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.8,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 33,
+        "difficulty": "medium",
+        "servings": 3,
+        "created_by": "user_04",
+        "avg_rating": 3.7,
+        "recipe_id": "r_021",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 10,
+        "total_likes": 132
+    },
+    {
+        "views": 196,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Pulao Special",
+        "created_at": "2025-11-21T07:17:33.240265",
+        "tags": [
+            "spicy"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "ginger",
+                "quantity": 1.5,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.7,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.7,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 1.9,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 19,
+        "difficulty": "easy",
+        "servings": 2,
+        "created_by": "user_10",
+        "avg_rating": 3.5,
+        "recipe_id": "r_022",
+        "cuisine": "Hyderabadi",
+        "prep_time_minutes": 7,
+        "total_likes": 140
+    },
+    {
+        "views": 43,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Idli Sambar",
+        "created_at": "2025-11-21T07:17:33.568457",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.1,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.8,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.6,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.0,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "tomato",
+                "quantity": 0.9,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 0.6,
+                "unit": "gram"
+            }
+        ],
+        "cook_time_minutes": 40,
+        "difficulty": "hard",
+        "servings": 3,
+        "created_by": "user_03",
+        "avg_rating": 4.4,
+        "recipe_id": "r_023",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 11,
+        "total_likes": 10
+    },
+    {
+        "views": 451,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Tomato Rasam",
+        "created_at": "2025-11-21T07:17:33.882082",
+        "tags": [
+            "traditional"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "salt",
+                "quantity": 1.7,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 0.9,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 2.0,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.9,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.3,
+                "unit": "tbsp"
+            }
+        ],
+        "cook_time_minutes": 28,
+        "difficulty": "easy",
+        "servings": 3,
+        "created_by": "user_04",
+        "avg_rating": 4.0,
+        "recipe_id": "r_024",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 13,
+        "total_likes": 41
+    },
+    {
+        "views": 337,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Chicken Curry",
+        "created_at": "2025-11-21T07:17:34.205447",
+        "tags": [
+            "high-protein"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "tomato",
+                "quantity": 1.5,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.5,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "salt",
+                "quantity": 0.8,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 11,
+        "difficulty": "hard",
+        "servings": 1,
+        "created_by": "user_04",
+        "avg_rating": 3.6,
+        "recipe_id": "r_025",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 11,
+        "total_likes": 24
+    },
+    {
+        "views": 370,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Pav Bhaji",
+        "created_at": "2025-11-21T07:17:34.513224",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "onion",
+                "quantity": 0.9,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.6,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.9,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "ginger",
+                "quantity": 0.6,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "garlic",
+                "quantity": 0.7,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 0.7,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 15,
+        "difficulty": "medium",
+        "servings": 2,
+        "created_by": "user_07",
+        "avg_rating": 3.7,
+        "recipe_id": "r_026",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 17,
+        "total_likes": 101
+    },
+    {
+        "views": 135,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Panner Butter Masala",
+        "created_at": "2025-11-21T07:17:34.834725",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "garlic",
+                "quantity": 1.2,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 1.4,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.8,
+                "unit": "gram"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 2.0,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 37,
+        "difficulty": "medium",
+        "servings": 5,
+        "created_by": "user_03",
+        "avg_rating": 4.2,
+        "recipe_id": "r_027",
+        "cuisine": "South Indian",
+        "prep_time_minutes": 16,
+        "total_likes": 104
+    },
+    {
+        "views": 200,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Idli Sambar",
+        "created_at": "2025-11-21T07:17:35.155846",
+        "tags": [
+            "kids-friendly"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "chilli",
+                "quantity": 2.0,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.9,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "ginger",
+                "quantity": 0.7,
+                "unit": "tsp"
+            },
+            {
+                "ingredient_name": "pepper",
+                "quantity": 1.4,
+                "unit": "cup"
+            }
+        ],
+        "cook_time_minutes": 34,
+        "difficulty": "easy",
+        "servings": 6,
+        "created_by": "user_04",
+        "avg_rating": 4.6,
+        "recipe_id": "r_028",
+        "cuisine": "Bengali",
+        "prep_time_minutes": 9,
+        "total_likes": 74
+    },
+    {
+        "views": 476,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "Step 4: Follow cooking instruction 4...",
+                "step_order": 4
+            },
+            {
+                "text": "Step 5: Follow cooking instruction 5...",
+                "step_order": 5
+            },
+            {
+                "text": "Step 6: Follow cooking instruction 6...",
+                "step_order": 6
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Chole Bhature",
+        "created_at": "2025-11-21T07:17:35.475390",
+        "tags": [
+            "veg"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "onion",
+                "quantity": 2.0,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 0.7,
+                "unit": "tbsp"
+            },
+            {
+                "ingredient_name": "chilli",
+                "quantity": 1.4,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "oil",
+                "quantity": 1.5,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.9,
+                "unit": "tsp"
+            }
+        ],
+        "cook_time_minutes": 21,
+        "difficulty": "easy",
+        "servings": 5,
+        "created_by": "user_07",
+        "avg_rating": 3.1,
+        "recipe_id": "r_029",
+        "cuisine": "Hyderabadi",
+        "prep_time_minutes": 10,
+        "total_likes": 84
+    },
+    {
+        "views": 286,
+        "steps": [
+            {
+                "text": "Step 1: Follow cooking instruction 1...",
+                "step_order": 1
+            },
+            {
+                "text": "Step 2: Follow cooking instruction 2...",
+                "step_order": 2
+            },
+            {
+                "text": "Step 3: Follow cooking instruction 3...",
+                "step_order": 3
+            },
+            {
+                "text": "",
+                "step_order": ""
+            }
+        ],
+        "description": "Auto-generated recipe description.",
+        "title": "Tomato Rasam",
+        "created_at": "2025-11-21T07:17:35.809872",
+        "tags": [
+            "quick"
+        ],
+        "ingredients": [
+            {
+                "ingredient_name": "chilli",
+                "quantity": 0.9,
+                "unit": "pieces"
+            },
+            {
+                "ingredient_name": "onion",
+                "quantity": 1.9,
+                "unit": "cup"
+            },
+            {
+                "ingredient_name": "rice",
+                "quantity": 1.9,
+                "unit": "pieces"
+            }
+        ],
+        "cook_time_minutes": 27,
+        "difficulty": "easy",
+        "servings": 6,
+        "created_by": "user_07",
+        "avg_rating": 4.2,
+        "recipe_id": "r_030",
+        "cuisine": "Punjabi",
+        "prep_time_minutes": 17,
+        "total_likes": 58
+    }
+]

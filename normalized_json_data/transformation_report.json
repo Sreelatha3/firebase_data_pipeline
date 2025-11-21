@@ -1,0 +1,15 @@
+{
+  "recipes_processed": 30,
+  "recipes_with_schema_issues": [
+    {
+      "recipe_id": "r_020",
+      "issues": [
+        "unexpected difficulty value: invalid_level"
+      ]
+    }
+  ],
+  "ingredients_written": 131,
+  "steps_written": 122,
+  "interactions_written": 60,
+  "notes": []
+}

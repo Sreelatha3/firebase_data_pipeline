@@ -1,0 +1,72 @@
+[
+    {
+        "location": "Bangalore",
+        "signup_date": "2024-07-03T00:00:00",
+        "email": "sree@example.com",
+        "user_id": "user_01",
+        "name": "user_sree"
+    },
+    {
+        "location": "Chennai",
+        "signup_date": "2024-06-02T00:00:00",
+        "email": "user2@example.com",
+        "user_id": "user_02",
+        "name": "User 2"
+    },
+    {
+        "location": "Hyderabad",
+        "signup_date": "2024-09-02T00:00:00",
+        "email": "user3@example.com",
+        "user_id": "user_03",
+        "name": "User 3"
+    },
+    {
+        "location": "Chennai",
+        "signup_date": "2024-10-24T00:00:00",
+        "email": "user4@example.com",
+        "user_id": "user_04",
+        "name": "User 4"
+    },
+    {
+        "location": "Chennai",
+        "signup_date": "2024-06-04T00:00:00",
+        "email": "user5@example.com",
+        "user_id": "user_05",
+        "name": "User 5"
+    },
+    {
+        "location": "Chennai",
+        "signup_date": "2024-04-18T00:00:00",
+        "email": "user6@example.com",
+        "user_id": "user_06",
+        "name": "User 6"
+    },
+    {
+        "location": "Hyderabad",
+        "signup_date": "2024-07-14T00:00:00",
+        "email": "user7@example.com",
+        "user_id": "user_07",
+        "name": "User 7"
+    },
+    {
+        "location": "Mumbai",
+        "signup_date": "2024-08-17T00:00:00",
+        "email": "user8@example.com",
+        "user_id": "user_08",
+        "name": "User 8"
+    },
+    {
+        "location": "Chennai",
+        "signup_date": "2024-11-16T00:00:00",
+        "email": "user9@example.com",
+        "user_id": "user_09",
+        "name": "User 9"
+    },
+    {
+        "location": "Hyderabad",
+        "signup_date": "2024-03-13T00:00:00",
+        "email": "user10@example.com",
+        "user_id": "user_10",
+        "name": "User 10"
+    }
+]

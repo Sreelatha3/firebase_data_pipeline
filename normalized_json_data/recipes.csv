@@ -1,0 +1,31 @@
+recipe_id,title,description,servings,prep_time_minutes,cook_time_minutes,difficulty,cuisine,tags,created_by,created_at
+r_001,Pav Bhaji,Auto-generated recipe description.,4,12,26,hard,South Indian,spicy,user_03,2025-11-21T07:17:18.364219
+r_002,Tomato Rasam,Auto-generated recipe description.,4,13,16,easy,Hyderabadi,veg,user_04,2025-11-21T07:17:21.359858
+r_003,Pulao Special,Auto-generated recipe description.,1,10,37,medium,Hyderabadi,quick,user_08,2025-11-21T07:17:21.821831
+r_004,Masala Dosa,Auto-generated recipe description.,5,6,37,medium,Punjabi,veg,user_07,2025-11-21T07:17:23.013917
+r_005,Pulao Special,Auto-generated recipe description.,1,16,34,easy,Punjabi,veg,user_09,2025-11-21T07:17:23.577317
+r_006,Veg Kurma,Auto-generated recipe description.,6,5,18,medium,Bengali,veg,user_02,2025-11-21T07:17:24.639139
+r_007,Upma,Auto-generated recipe description.,1,9,27,easy,Punjabi,kids-friendly,user_02,2025-11-21T07:17:25.193579
+r_008,Hyderabadi Biryani,Auto-generated recipe description.,3,9,33,medium,Punjabi,traditional,user_09,2025-11-21T07:17:26.252887
+r_009,Lemon Rice,Auto-generated recipe description.,6,14,11,medium,Bengali,spicy,user_04,2025-11-21T07:17:26.821724
+r_010,Tomato Rasam,Auto-generated recipe description.,4,20,20,medium,Bengali,traditional,user_06,2025-11-21T07:17:27.887939
+r_011,Egg Bhurji,Auto-generated recipe description.,4,19,25,hard,Hyderabadi,veg,user_10,2025-11-21T07:17:28.457620
+r_012,Egg Bhurji,Auto-generated recipe description.,4,19,12,hard,Bengali,kids-friendly,user_10,2025-11-21T07:17:29.518371
+r_013,Chicken Curry,Auto-generated recipe description.,6,15,15,easy,Bengali,quick,user_10,2025-11-21T07:17:30.040820
+r_014,Pav Bhaji,Auto-generated recipe description.,1,11,10,easy,South Indian,traditional,user_09,2025-11-21T07:17:30.364821
+r_015,Chole Bhature,Auto-generated recipe description.,3,8,26,hard,South Indian,veg,user_10,2025-11-21T07:17:30.735361
+r_016,Egg Bhurji,Auto-generated recipe description.,3,16,31,hard,Punjabi,high-protein,user_07,2025-11-21T07:17:31.182531
+r_017,Idli Sambar,Auto-generated recipe description.,1,18,40,medium,South Indian,quick,user_08,2025-11-21T07:17:31.627178
+r_018,Tomato Rasam,Auto-generated recipe description.,6,7,23,medium,South Indian,kids-friendly,user_03,2025-11-21T07:17:31.941522
+r_019,Hyderabadi Biryani,Auto-generated recipe description.,1,12,32,easy,Bengali,spicy,user_09,2025-11-21T07:17:32.270488
+r_020,Idli Sambar,Auto-generated recipe description.,3,13,40,invalid_level,Hyderabadi,kids-friendly,user_03,2025-11-21T07:17:32.594228
+r_021,Curd Rice,Auto-generated recipe description.,3,10,33,medium,South Indian,quick,user_04,2025-11-21T07:17:32.916772
+r_022,Pulao Special,Auto-generated recipe description.,2,7,19,easy,Hyderabadi,spicy,user_10,2025-11-21T07:17:33.240265
+r_023,Idli Sambar,Auto-generated recipe description.,3,11,40,hard,South Indian,kids-friendly,user_03,2025-11-21T07:17:33.568457
+r_024,Tomato Rasam,Auto-generated recipe description.,3,13,28,easy,Bengali,traditional,user_04,2025-11-21T07:17:33.882082
+r_025,Chicken Curry,Auto-generated recipe description.,1,11,11,hard,Bengali,high-protein,user_04,2025-11-21T07:17:34.205447
+r_026,Pav Bhaji,Auto-generated recipe description.,2,17,15,medium,Punjabi,kids-friendly,user_07,2025-11-21T07:17:34.513224
+r_027,Panner Butter Masala,Auto-generated recipe description.,5,16,37,medium,South Indian,veg,user_03,2025-11-21T07:17:34.834725
+r_028,Idli Sambar,Auto-generated recipe description.,6,9,34,easy,Bengali,kids-friendly,user_04,2025-11-21T07:17:35.155846
+r_029,Chole Bhature,Auto-generated recipe description.,5,10,21,easy,Hyderabadi,veg,user_07,2025-11-21T07:17:35.475390
+r_030,Tomato Rasam,Auto-generated recipe description.,6,17,27,easy,Punjabi,quick,user_07,2025-11-21T07:17:35.809872
