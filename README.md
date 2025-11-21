@@ -17,6 +17,9 @@ It includes:
 
 * Analytics & Insights
 
+## Architecure
+<img width="421" height="772" alt="image" src="https://github.com/user-attachments/assets/4d055776-0335-4cd6-893e-d1b76acf6cc4" />
+
 ## Project Structure: 
 
 <img width="783" height="652" alt="image" src="https://github.com/user-attachments/assets/48cd9a2d-6f44-479b-9560-aae8085611c7" />
