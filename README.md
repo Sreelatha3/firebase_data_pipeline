@@ -62,14 +62,47 @@ It includes:
 
 
 #### 2. Install Packages:
-      ```bash 
+      
       pip install firebase-admin
       
 #### 3. Setup Data in Firestore:
+
      # run the following python scripts to insert the data in the firestore db (here : test-db)
      python insert_my_recipe.py
      python insert_synthetic_data.py
+     
 The insert_my_recipe.py will insert spaghetti pasta recipe and insert_synthetic_data.py inserts 19 other recipes, 10 users and 20 user interactions.
+
+#### 4. Export Firestore collections to JSON
+
+      python export_data.py
+
+This step extracts all recipe, user, and interaction documents from Firebase Firestore and saves them into JSON files. The script (export_data.py) connects to Firestore using the service account key, reads each collection, converts Firestore-specific types (like timestamps) into standard JSON-friendly formats, and writes the results into the data/exported_data/ folder.
+These exported JSON files act as the raw input for the next transformation step in the ETL pipeline.
+
+#### 5. Transform the exported data into Normalized CSV
+
+      python transformation.py
+      
+This step takes the raw JSON data exported from Firestore and converts it into clean, structured, and fully normalized CSV tables. The transformation script (transformation.py) fixes data types, handles missing or inconsistent fields, splits nested lists (ingredients, steps) into separate tables, and outputs four normalized CSV files: recipes.csv, ingredients.csv, steps.csv, and interactions.csv.
+These CSVs form the standardized dataset used for validation and analytics.
+
+#### 6. Validate the normalized data
+
+      python validate_data.py
+      
+This step runs a data quality check on the normalized CSV files. The validation script (validate_data.py) checks for required fields, correct data types, valid difficulty values, positive numeric fields, and ensures every recipe has corresponding ingredients and steps. It then generates a validation_report.json summarizing valid records and detailed errors for any invalid rows.
+
+#### 7. Run analytics to draw insights
+
+      python analytics.py
+
+This step performs analysis on the cleaned and validated CSV data. The analytics script (analytics.py) calculates insights such as top ingredients, average prep time, difficulty distribution, engagement metrics, correlations between recipe attributes, and top-performing recipes. These insights help understand patterns, popularity, and overall recipe performance.
+
+
+
+
+
 
 
 
