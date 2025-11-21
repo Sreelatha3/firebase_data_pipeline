@@ -100,6 +100,31 @@ This step runs a data quality check on the normalized CSV files. The validation 
 This step performs analysis on the cleaned and validated CSV data. The analytics script (analytics.py) calculates insights such as top ingredients, average prep time, difficulty distribution, engagement metrics, correlations between recipe attributes, and top-performing recipes. These insights help understand patterns, popularity, and overall recipe performance.
 
 
+#### 8. Insights drawn from analytics:
+
+* Key Insights Produced
+
+Most common ingredients across all recipes
+
+Average preparation time for the dataset
+
+Difficulty distribution (easy vs. medium vs. hard)
+
+Cuisine vs. difficulty breakdown
+
+Average rating by difficulty
+
+Engagement metrics (views + likes) per difficulty
+
+Correlation between prep time and total likes
+
+Top viewed recipes
+
+Ingredients with highest engagement
+
+Top recipe authors and most active creator
+
+
 
 
 
