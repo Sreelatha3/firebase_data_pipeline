@@ -55,7 +55,7 @@ It includes:
        * likes : Number of users that liked the recipe (wuth recipe_id)
        * views : Number of users that viewed the recipe 
     
-##### Normalized Output(converting collections into tables) -CSV Schema:
+##### Normalized Output (collections converted into tables) -CSV Schema:
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
      *  Primary Key: recipe_id
   2. ingredients.csv: Linked ingredients.
