@@ -80,9 +80,9 @@ It includes:
   * i. Prerequisities for running and setting up the pipeline:
         python version >= 3.9
         google firebase credentials ( with firestore enabled)
-  * ii. Install the following dependencies:
-                ###### pip install firebase-admin
-                ###### pip install pandas
+  * ii. ###### Install the following dependencies:
+                pip install firebase-admin
+                 pip install pandas
             pip install numpy
             pip install scipy
             pip install matplotlib
