@@ -33,6 +33,7 @@ It includes:
        * location : Location of the user
        * signup_date : User signup date (assuming the recipes are hosted on app or web)
        * user_id : Unique Identifier for the user (user_id and the user document id are same)
+      
    * Recipes: Documents containing recipe data (document id as the recipe_id - Unique Identifier for each of the recipe)
        * title : Name of the recipe
        * created_by : Unique identifier that refers to the user_id in the users collection's user_id
@@ -48,6 +49,12 @@ It includes:
        * steps : Nested array that consists of step order and instructions
   
    * Interactions: Event logs (views, likes, ratings).
+       * recipe_id : Unique Id that refers to the recipe_id of the recipes collection
+       * cook_attempt : Count of the number of times users tried to cook the recipe (with recipe_id)
+       * avg_rating : average rating of the recipe given by users
+       * likes : Number of users that liked the recipe (wuth recipe_id)
+       * views : Number of users that viewed the recipe 
+    
 ##### Normalized Output (CSV Schema):
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
      *  Primary Key: recipe_id
