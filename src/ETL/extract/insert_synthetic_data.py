@@ -20,7 +20,7 @@ CUISINES = ["South Indian", "North Indian", "Hyderabadi", "Bengali", "Punjabi"]
 DIFFICULTIES = ["easy", "medium", "hard"]
 TAGS = [["quick"], ["veg"], ["spicy"], ["traditional"], ["kids-friendly"], ["high-protein"]]
 
-# -------------------------- INGREDIENTS -------------------------------- #
+# INGREDIENTS 
 def generate_ingredients():
     items = ["onion", "tomato", "rice", "chilli", "ginger", "garlic", "oil", "salt", "pepper"]
     units = ["cup", "tsp", "tbsp", "gram", "pieces"]
@@ -44,7 +44,7 @@ def generate_ingredients():
     return ingredients
 
 
-# ------------------------------ STEPS ---------------------------------- #
+#  STEPS 
 def generate_steps():
     steps = []
     step_count = random.randint(3, 6)
@@ -64,7 +64,7 @@ def generate_steps():
     return steps
 
 
-# ------------------------- RECIPES ------------------------------------- #
+# RECIPES 
 def insert_synthetic_recipes(n=30):
     for i in range(1, n + 1):
         recipe_id = f"r_{i:03d}"
@@ -98,7 +98,7 @@ def insert_synthetic_recipes(n=30):
         print(f"Inserted recipe {recipe_id}")
 
 
-# ------------------------ USERS ----------------------------------------- #
+# USERS 
 def insert_users(n=10):
     for i in range(1, n + 1):
         uid = f"user_{i:02d}"
@@ -124,7 +124,7 @@ def insert_users(n=10):
         print(f"Inserted user {uid}")
 
 
-# ------------------------ INTERACTIONS -------------------------------- #
+# INTERACTIONS 
 def insert_interactions(event_count=60):
     for i in range(event_count):
         rid = f"r_{random.randint(1, 30):03d}"

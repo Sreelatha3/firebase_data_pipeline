@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import os
 
-# ---------------- RECIPES VALIDATION ----------------
+#  RECIPES VALIDATION 
 
 def validate_recipes(recipes_df):
     errors = []
@@ -42,7 +42,7 @@ def validate_recipes(recipes_df):
     return valid, errors
 
 
-# ---------------- INGREDIENTS VALIDATION ----------------
+#  INGREDIENTS VALIDATION 
 
 def validate_ingredients(ing_df):
     errors = []
@@ -73,7 +73,7 @@ def validate_ingredients(ing_df):
     return valid, errors
 
 
-# ---------------- STEPS VALIDATION ----------------
+# STEPS VALIDATION 
 
 def validate_steps(steps_df):
     errors = []
@@ -101,7 +101,7 @@ def validate_steps(steps_df):
     return valid, errors
 
 
-# ---------------- CROSS-TABLE VALIDATION ----------------
+# CROSS-TABLE VALIDATION 
 
 def validate_cross_links(recipes_df, ing_df, steps_df):
     errors = []
@@ -120,7 +120,7 @@ def validate_cross_links(recipes_df, ing_df, steps_df):
     return errors
 
 
-# ---------------- MAIN VALIDATION RUNNER ----------------
+# MAIN VALIDATION RUNNER 
 
 def run_validation(output_file="data/validation_report/validation_report.json"):
     recipes_df = pd.read_csv("data/normalized_json_data/recipes.csv")
