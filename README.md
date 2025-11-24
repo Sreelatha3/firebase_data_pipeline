@@ -26,11 +26,12 @@ It includes:
 <img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
 
 *   The pipeline transforms the NoSQL Document structure into a Relational Star Schema.
-#### Raw Source:
+##### Raw Source:
    * Recipes: Documents containing nested arrays for ingredients and steps.
+       *  
    * Users: User profile metadata.
    * Interactions: Event logs (views, likes, ratings).
-#### Normalized Output (CSV Schema):
+##### Normalized Output (CSV Schema):
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
      *  Primary Key: recipe_id
   2. ingredients.csv: Linked ingredients.
