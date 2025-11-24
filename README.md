@@ -6,12 +6,17 @@ A complete end-to-end data engineering mini-pipeline built using Firebase Firest
 - [1. Overview](#1-overview)
 - [2. Architecture](#2-architecture)
 - [3. Data Model](#3-data-model)
+  - [3.a Data on the firestore database (Raw Data)](#3a-data-on-the-firestore-database---collections--documents-raw-data)
+  - - [3.a.i Entities](#3ai-entities)
+  - - [3.a.ii. Relationships](#3aii-relationships)
+  - [3.b Normalized Output CSV Schema](#3b-normalized-output-collections-converted-into-tables--csv-schema)
 - [4. Instructions for running the pipeline](#4-instructions-for-running-the-pipeline)
 - [5. ETL Process](#5-etl-process)
 - [6. Analytics](#6-analytics)
 - [7. Insights Summary](#7-insights-summary)
 - [8. Known Constraints & Limitations](#8-known-constraints--limitations)
 - [9. Visual Insights](#9-visual-insights)
+
 
 
 
