@@ -2,7 +2,21 @@
 
 A complete end-to-end data engineering mini-pipeline built using Firebase Firestore as the source system, with ETL, validation, analytics, and documentation.
 
-### 1. Overview
+## Table of Contents
+- [Overview](#Overview)
+- [Architecture](#architecture)
+- [Data Model](#data-model)
+- [Data Model](#instructions-for-running-the-pipeline)
+- [Instructions for running the pipeline](#instructions-for-running-the-pipeline)
+- [ETL Process](#etl-process)
+- [Analytics](#analytics)
+- [Insights Summary](#insights-summary)
+- [Known Constraints & Limitations](#known-constraints-and-limitations)
+- [Visual Insights](#visual-insights)
+
+
+
+## 1. Overview
 
 This project implements a fully functional data pipeline for recipe analytics using Firebase Firestore.
 It includes:
@@ -17,17 +31,13 @@ It includes:
 
 * Analytics & Insights
 
-
-## 2. Deliverables : 
-
-
-## 2. Architecure Diagram
+## 2. Architecure
 
 <img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/b73b4d2b-5813-4f5d-be48-1c55870055a6" />
 
 * figure 1: Architecture - that talks about the process flow
 
-### 3. Data Model:
+## 3. Data Model:
 <img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
 
 *  figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
