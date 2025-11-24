@@ -2,7 +2,7 @@
 
 A complete end-to-end data engineering mini-pipeline built using Firebase Firestore as the source system, with ETL, validation, analytics, and documentation.
 
-### Overview
+### 1. Overview
 
 This project implements a fully functional data pipeline for recipe analytics using Firebase Firestore.
 It includes:
@@ -17,19 +17,19 @@ It includes:
 
 * Analytics & Insights
 
-## Architecure Diagram
+## 2. Architecure Diagram
 
 <img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/b73b4d2b-5813-4f5d-be48-1c55870055a6" />
 
 * figure 1: Architecture - that talks about the process flow
 
-### Data Model:
+### 3. Data Model:
 <img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
 
 *  figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
 
-##### Raw Data ( Data on the firestore database - collections & documents):
-  ###### Entities:
+##### 3.a. Data on the firestore database - collections & documents (Raw Data):
+  ###### 3.a.i. Entities:
    * Users: User profile metadata. (user_id as the document id)
        * name : Name of the User
        * email : Email id of the user
@@ -58,13 +58,13 @@ It includes:
        * likes : Number of users that liked the recipe (wuth recipe_id)
        * views : Number of users that viewed the recipe 
 
-      ###### Relationships:
+      ##### 3.a.ii. Relationships:
        * users - recipes : An user can create any number of recipes ( 1:N or One-to-many relationship between user and recipes). 
        * recipes - ingredients : A recipe can have any number of ingredients ( 1:N or One-to-many relationship between recipes and ingredients).
        * recipes - steps: A recipe can have any number of steps ( 1:N or One-to-many relationship between recipes and steps.)
        * recipes - interactions : A recipe can have many interactions like views, likes, cook_attempts. 
     
-##### Normalized Output (collections converted into tables) -CSV Schema:
+##### 3.b. Normalized Output (collections converted into tables) -CSV Schema:
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
      *  Primary Key: recipe_id
   2. ingredients.csv: Linked ingredients.
@@ -75,7 +75,7 @@ It includes:
      *  Foreign Key: recipe_id
 
 
-## Instructions for running the pipeline:
+## 4. Instructions for running the pipeline:
 
 
 ## 📊 Visual Insights
