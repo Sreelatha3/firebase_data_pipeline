@@ -89,6 +89,12 @@ It includes:
               pip install scipy
               pip install matplotlib
               pip install seaborn
+              
+  * iii. Firestore credentials : Download the private-key information from the firestore and save it as service_account_key.json (here it is gitignored ).
+  * ##### iv. Insert the data into the firestore db (seeding the data):
+
+             python insert_my_recipe.py # inserts your own recipe).
+             python insert_synthetic_data.py #inserts synthetic data into the users, recipes and interactions collections
   * 
 
 
