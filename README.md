@@ -29,7 +29,7 @@ It includes:
 *  figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
 
 ##### 3.a. Data on the firestore database - collections & documents (Raw Data):
-  ###### 3.a.i. Entities:
+  ##### 3.a.i. Entities:
    * Users: User profile metadata. (user_id as the document id)
        * name : Name of the User
        * email : Email id of the user
@@ -76,6 +76,18 @@ It includes:
 
 
 ## 4. Instructions for running the pipeline:
+
+  * i. Prerequisities for running and setting up the pipeline:
+        python version >= 3.9
+        google firebase credentials ( with firestore enabled)
+  * ii. Install the following dependencies:
+        ``` pip install firebase-admin
+            pip install pandas
+            pip install numpy
+            pip install scipy
+            pip install matplotlib
+            pip install seaborn
+  * 
 
 
 ## 📊 Visual Insights
