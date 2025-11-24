@@ -32,6 +32,7 @@ A complete end-to-end data engineering mini-pipeline built using Firebase Firest
 
 
 
+
 ## 1. Overview
 
 This project implements a fully functional data pipeline for recipe analytics using Firebase Firestore.
