@@ -426,7 +426,7 @@ The pipeline converts your nested document data into a structured relational for
 ### iv. Atomic Transactions: 
   The current ETL process is file-based. If the script fails halfway through writing CSVs, it may leave the data in an inconsistent state until re-run.
 
-## 📊 9. Visual Insights
+## 9. Visual Insights
 
 Below are the key insights generated from the analytics visualisations:
 #### 1.🥗 Top Ingredients Used
