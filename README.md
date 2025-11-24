@@ -304,13 +304,15 @@ The pipeline converts your nested document data into a structured relational for
   *  Output: A set of clean, normalized CSV files (recipes.csv, ingredients.csv, steps.csv, interactions.csv). It also outputs a Transformation Report logging any structural or schema issues encountered.
   
 #### iii. Loading (L) :
-Tool: Implicit (The local file system)
-
-Action: The clean, normalized CSVs act as the final analytical store (the Load destination).
-
-The downstream scripts, validate_data.py and analytics.py, load these files into Pandas DataFrames.
-
-Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
+  *  Tool: Implicit (The local file system)
+  
+  *  Action: The clean, normalized CSVs act as the final analytical store (the Load destination).
+  
+  *  The downstream scripts, validate_data.py and analytics.py, load these files into Pandas DataFrames.
+  
+  *  Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
+  
+  *  $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
 
 ## 📊 Visual Insights
 
