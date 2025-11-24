@@ -25,35 +25,9 @@ It includes:
 ### Data Model:
 <img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
 
-
-*  figure : Entity-Relationsip Diagram for the collections when they are normalized or flattened 
-
-*  Users Collection:
-   This collection consists of the details about the user like email, location, name, signup_date, user_id .
-  *  user_id (PK)
-  *  name
-             *  email
-             *  signup_date
-             *  location
-*  Recipes Collection:
-   This collection consists of the details about the recipe, including:
-              *  recipe_id (PK)
-              *  title
-              *  description
-              *  servings
-              *  prep_time_minutes
-              *  cook_time_minutes
-              *  difficulty (enum: easy, medium, hard)
-              *  cuisine
-              *  tags (array/string)
-              *  created_by (FK → Users.user_id)
-              *  created_at
-  *  Interactions Collection :
-    The Interaction collection consists of details about the interactions of users with a specific recipe.
-                * avg_rating: Average of ratings of the recipe given by the users who tried out the recipe.
-                * cook_attempt: The number of times users tried this recipe.
-                * likes: The number of likes given by the users to this recipe.
-                * recipe_id : Unique Identifier for each of the recipes that are in the recipes collection.
+*   The pipeline transforms the NoSQL Document structure into a Relational Star Schema.
+#### Raw Source:
+   * Recipes: Documents containing nested arrays for ingredients and steps.
 
 ## 📊 Visual Insights
 
