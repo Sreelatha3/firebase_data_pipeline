@@ -1,166 +1,469 @@
-# Firebase Recipe Analytics Pipeline
+## Firebase-Based Recipe Analytics Pipeline
 
-## Project Overview
-This project implements an end-to-end ETL / ELT pipeline using Firebase Firestore as the source system. It extracts recipe data, validates it, normalizes it into relational CSVs, and runs analytics to generate actionable insights.
+A complete end-to-end data engineering mini-pipeline built using Firebase Firestore as the source system, with ETL, validation, analytics, and documentation.
 
-Primary goals:
-- Demonstrate data modeling and normalization from nested Firestore documents
-- Implement validation rules and produce a structured validation report
-- Produce normalized CSV outputs and analytics summaries for evaluation
+### 1. Overview
 
-## Repository structure
+This project implements a fully functional data pipeline for recipe analytics using Firebase Firestore.
+It includes:
 
-firebase_pipeline/
-├─ exported_data/
-│ ├─ raw_interactions.json
-│ ├─ raw_recipes.json
-│ └─ raw_users.json
-├─ normalized/
-│ ├─ recipes.csv
-│ ├─ users.csv
-│ ├─ ingredients.csv
-│ ├─ steps.csv
-│ └─ interactions.csv
-├─ validation_report/
-│ └─ validation_report.json
-├─ analytics.py
-├─ export_data.py
-├─ insert_my_recipe.py
-├─ insert_synthetic_data.py
-├─ transformation.py
-└─ validate_data.py
+* Data Modeling
 
+* Firestore data setup
 
-> **Note:** The repository uses the chronological workflow used during development:
-> 1. Insert / seed data to Firestore (optional)  
-> 2. Export Firestore collections to `exported_data/` (`export_data.py`)  
-> 3. Transform JSON → normalized CSVs (`transformation.py`) → outputs to `normalized/`  
-> 4. Validate normalized CSVs (`validate_data.py`) → JSON report under `validation_report/`  
-> 5. Run analytics (`analytics.py`) → prints and saves insights
+* Extraction + Transformation + Validation
 
----
+* Normalized CSV outputs
 
-## Data model (high-level)
-Normalized relational schema produced by transformation:
+* Analytics & Insights
 
-**recipes.csv**
-- `recipe_id` (PK), `title`, `description`, `servings`, `prep_time_minutes`, `cook_time_minutes`, `difficulty` (easy|medium|hard), `cuisine`, `tags` (CSV string), `created_by`, `created_at`
-- Aggregated interaction columns added after join: `total_views`, `total_likes`, `avg_rating`, `total_cook_attempts` (these are derived by aggregating interactions.csv)
+## 2. Architecure Diagram
 
-**ingredients.csv**
-- `recipe_id` (FK → recipes.recipe_id), `ingredient_name`, `quantity`, `unit`
+<img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/b73b4d2b-5813-4f5d-be48-1c55870055a6" />
 
-**steps.csv**
-- `recipe_id` (FK), `step_order`, `step_text`
+* figure 1: Architecture - that talks about the process flow
 
-**interactions.csv**
-- event-level rows with `avg_rating`, `cook_attempt`, `likes`, `recipe_id`, `views`
+### 3. Data Model:
+<img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
 
-**users.csv**
-- `user_id`, `name`, `email`, `signup_date`, `location`
+*  figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
 
-Design decisions:
-- Ingredients and steps are modeled as separate child tables to enforce 1:N relationships and ease validation.
-- Interactions are kept event-level to allow richer aggregation later; summary metrics are computed during analytics.
+##### 3.a. Data on the firestore database - collections & documents (Raw Data):
+  ##### 3.a.i. Entities:
+   * Users: User profile metadata. (user_id as the document id)
+       * name : Name of the User
+       * email : Email id of the user
+       * location : Location of the user
+       * signup_date : User signup date (assuming the recipes are hosted on app or web)
+       * user_id : Unique Identifier for the user (user_id and the user document id are same)
+      
+   * Recipes: Documents containing recipe data (document id as the recipe_id - Unique Identifier for each of the recipe)
+       * title : Name of the recipe
+       * created_by : Unique identifier that refers to the user_id in the users collection's user_id
+       * created_at : Time of creation of the recipe on the web/app by the user
+       * description : Description about the recipe
+       * servings : How many people can eat the recipe ( since the ingredients are quantified therefore, the servings can calculated vice versa)
+       * prep_time_minutes : Time taken to prepare the items that are needed to cook the recipe
+       * cook_time_minutes : Time taken to cook the recipe
+       * difficulty : Difficulty level (easy, medium, hard) of the recipe
+       * cuisine : Tells about the cuisine category the recipe falls under (ex: Italian etc)
+       * tags : Talks about the recipe taste and other qualities these tags(ex: spicy, sweet etc) are helpful for search operations
+       * ingredients : Nested array that consists of ingredient's data - name of the ingredient, quantity of the ingredient, unit - units of the quantity
+       * steps : Nested array that consists of step order and instructions
+  
+   * Interactions: Event logs (views, likes, ratings).
+       * recipe_id : Unique Id that refers to the recipe_id of the recipes collection
+       * cook_attempt : Count of the number of times users tried to cook the recipe (with recipe_id)
+       * avg_rating : average rating of the recipe given by users
+       * likes : Number of users that liked the recipe (wuth recipe_id)
+       * views : Number of users that viewed the recipe 
 
----
-
-## How to run (commands)
-
-1. Install dependencies (Python 3.8+ recommended):
-   ```bash
-     pip install -r requirements.txt
-      # or
-     pip install pandas google-cloud-firestore scipy
-
-2. (Optional) Seed Firestore with your recipe + synthetic data:
-    ```bash
-    python insert_my_recipe.py       # inserts your seed recipe into Firestore
-    python insert_synthetic_data.py  # inserts synthetic recipes, users, interactions
-
-3. Export Firestore collections to JSON (requires service account key):
-    ```bash
-    # configure service_account_key.json in project root and edit export_data.py credentials path
-    python export_data.py
-    # outputs: exported_data/raw_recipes.json, raw_users.json, raw_interactions.json
-
-4. Transform exported JSON → normalized CSVs:
-    ```bash
-    python transformation.py
-    # outputs CSVs to normalized/
-
-5. Validate normalized CSVs (produces JSON report):
-    ```bash
-    python validate_data.py
-    # outputs: validation_report/validation_report.json
-
-6. Run analytics:
-    ```bash
-    python analytics.py
-    # prints insights and writes analytics summary CSV
+      ##### 3.a.ii. Relationships:
+       * users - recipes : An user can create any number of recipes ( 1:N or One-to-many relationship between user and recipes). 
+       * recipes - ingredients : A recipe can have any number of ingredients ( 1:N or One-to-many relationship between recipes and ingredients).
+       * recipes - steps: A recipe can have any number of steps ( 1:N or One-to-many relationship between recipes and steps.)
+       * recipes - interactions : A recipe can have many interactions like views, likes, cook_attempts. 
+    
+##### 3.b. Normalized Output (collections converted into tables) -CSV Schema:
+  1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
+     *  Primary Key: recipe_id
+  2. ingredients.csv: Linked ingredients.
+     *  Foreign Key: recipe_id
+  3. steps.csv: Cooking instructions with order.
+     *  Foreign Key: recipe_id
+  4. interactions.csv: User engagement metrics.
+     *  Foreign Key: recipe_id
 
 
-** Validation rules (enforced by validate_data.py) **
+## 4. Instructions for running the pipeline:
 
-Required fields present for recipes (title, recipe_id, servings, prep/cook times, difficulty, cuisine, created_by).
+  * i. Prerequisities for running and setting up the pipeline:
+        python version >= 3.9
+        google firebase credentials ( with firestore enabled)
+  * ii. Install the following dependencies:
+    
+        
+              pip install firebase-admin
+              pip install pandas
+              pip install numpy
+              pip install scipy
+              pip install matplotlib
+              pip install seaborn
+              
+  * iii. Firestore credentials : Download the private-key information from the firestore and save it as service_account_key.json (here it is gitignored ).
+  * ##### iv. Insert the data into the firestore db (seeding the data):
 
-Numeric fields must be positive/numeric: servings, prep_time_minutes, cook_time_minutes, ingredient quantity, and interactions numeric fields (views, likes, cook_attempt).
+             python insert_my_recipe.py # inserts your own recipe).
+             python insert_synthetic_data.py #inserts synthetic data into the users, recipes and interactions collections
+      output: The insert_my_recipe.py will insert spaghetti pasta recipe and insert_synthetic_data.py inserts 19 other recipes, 10 users and 20 user interactions.
 
-Steps and ingredients must exist per recipe (cross-table checks).
+  * ##### v. Export Firestore collections to JSON
+    Dump the Firestore collections (recipes, users, interactions) into local raw JSON files.
 
-Difficulty must be one of easy, medium, hard.
+            python export_data.py
 
-Interactions avg_rating if present must be numeric and in range 0–5.
+      This step extracts all recipe, user, and interaction documents from Firebase Firestore and saves them into JSON files. The script (export_data.py) connects to Firestore using the service account key, reads       each collection, converts Firestore-specific types (like timestamps) into standard JSON-friendly formats, and writes the results into the data/exported_data/ folder.
+      These exported JSON files act as the raw input for the next transformation step in the data pipeline      
+      output: The output has 3 files that is stored in data/exported_data folder with names raw_recipes.json, raw_users.json, raw_interactions.json.
+      
+  * ##### vi. Transformation (Transform json data to the csv):
+    Parse the raw JSON, unnest complex arrays (Ingredients, Steps), and normalize the schema into CSV format.
 
-The validator produces validation_report/validation_report.json listing valid rows and per-row reasons for invalid rows.
+            python transformation.py
 
-ETL / Transformation overview
+    This step takes the raw JSON data exported from Firestore and converts it into clean, structured, and fully normalized CSV tables. The transformation script (transformation.py) fixes data types, handles          missing or inconsistent fields, splits nested lists (ingredients, steps) into separate tables, and outputs four normalized CSV files: recipes.csv, ingredients.csv, steps.csv, and interactions.csv.
+    These CSVs form the standardized dataset used for validation and analytics.
+    output: The output has 3 files that is stored in the data/normalized_json_data with names ingredients.csv, interactions.csv, recipes.csv, users.csv and also transformation report.
 
-transformation.py:
+   * ##### vii.  Validation (Quality Assurance):
 
-Reads exported_data/raw_recipes.json and exported_data/raw_interactions.json.
+           python validate_data.py
+           
+     Run the data validator to identify schema violations, missing fields, or logical errors (e.g., negative cooking times).
+     output: A validation report is generated and stored under the following path: data/validation_report/validation_report.json
 
-Normalizes nested ingredients and steps into ingredients.csv and steps.csv.
+   * ##### viii. : Analytics & Visualization (Analysis)
 
-Normalizes tags into a comma-separated string in recipes.csv.
+           python analytics.py
+           python visualisation.py
+     
+  *  ##### ix. Generate insights and visualization charts.
+  
+  output:
+  *    i. Top ingredients : Frequently used ingredients whose frequency is greater than 5 
+  *   ii. Average Prep Time of all the recipes available:
+  *   iii. Diffculty Distribution : Grouping and counting the recipes that falls under the all difficulty levels like easy, medium, hard.
+  *   iv. Cuisine vs Recipe Difficulty Distribution (%): Cuisine vs Recipe difficulty distributions tells about each cuisine's difficlty distribution (like % of hard,medium,easy levels) of each cusinies.
+  *   v. Average Rating by Difficulty
+  *   vi. Average Engagement by Difficulty
+  *   vii. Correlation: Prep Time vs Total 
+  *   Top Viewed Recipes
+  *   Top Ingredients by Engagement
+  *   Average Rating per Cuisine
+  *   Top Engagement Rate Recipes
+  *   Top Cook Attempt Recipes
+  *   Top 5 Creators (Most Recipes Created)
 
-Writes normalized/recipes.csv, normalized/ingredients.csv, normalized/steps.csv, and normalized/interactions.csv.
 
-Produces a short transformation report (normalized/transformation_report.json) noting any schema inconsistencies encountered.
 
-Key cleaning steps:
+## 5. ETL Process:
+The pipeline converts your nested document data into a structured relational format across three main stages:
+<img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/f1c46840-a6b2-4df9-a708-97cb71e426e7" />
+  *  figure 3: ETL Process
 
-Coerce numerics where possible; leave blank if uncoercible and allow validator to flag it.
+#### i. Extraction (E) :  
+  *  Tool: export_data.py
 
-Normalize timestamps to ISO format where possible.
+  *  Action: The script connects to the Firebase Firestore database. It streams the raw document data from the collections (recipes, users, interactions).
 
-Accept multiple common key names to be robust against export variations.
+  *  Output: Raw JSON Files are created locally. The data is still denormalized, containing nested lists (ingredients, steps), exactly as it appeared in Firestore.
 
-Analytics summary (short)
+#### ii. Transformation (T):
+  *  Tool: transformation.py
 
-(Full analytics report included as analytics_report.md.)
+  *  Action: This core stage reads the raw JSON and enforces the relational schema:
 
-Sample insights from the dataset run:
+  *  Normalization: It unnests the complex list fields (like ingredients and steps) and separates them into their own tables (ingredients.csv, steps.csv), using the recipe_id to maintain the relationship.
 
-Top ingredients (by frequency): rice (21), garlic (19), onion (16), salt (15), oil (13), tomato (13), pepper (12), chilli (12), ginger (8)
+  *  Cleaning: It standardizes field names, coerces data types (e.g., ensuring string representations of numbers become actual numbers), and handles missing/inconsistent values.
 
-Average prep time: 12.43 minutes
+  *  Output: A set of clean, normalized CSV files (recipes.csv, ingredients.csv, steps.csv, interactions.csv). It also outputs a Transformation Report logging any structural or schema issues encountered.
+  
+#### iii. Loading (L) :
+  *  Tool: Implicit (The local file system)
+  
+  *  Action: The clean, normalized CSVs act as the final analytical store (the Load destination).
+  
+  *  The downstream scripts, validate_data.py and analytics.py, load these files into Pandas DataFrames.
+  
+  *  Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
+  
+### $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
 
-Difficulty distribution: easy: 11, medium: 11, hard: 7, invalid_level: 1 (data issue flagged)
 
-Cuisine vs difficulty %: (table printed by analytics — shows distribution per cuisine)
+## 6. Analytics:
 
-Avg rating by difficulty: easy ≈ 4.17, medium ≈ 4.13, hard ≈ 3.93
+*  Top ingredients : Frequently used ingredients whose frequency is greater than 5
 
-Engagement by difficulty: hard recipes show relatively higher average engagement (inspect further)
+| ingredient_name | count |
+| --------------- | ----- |
+| rice            | 21    |
+| garlic          | 19    |
+| onion           | 16    |
+| salt            | 15    |
+| oil             | 13    |
+| tomato          | 13    |
+| pepper          | 12    |
+| chilli          | 12    |
+| ginger          | 8     |
 
-Correlation (prep time vs likes): r ≈ -0.093 → No meaningful correlation
 
-Top viewed recipes: (top IDs printed with total_views; e.g., r_006 Veg Kurma: 1354 views, r_011 Egg Bhurji: 1136)
+*   Average Prep Time of all the recipes available:
 
-Top ingredients by engagement: rice, garlic, salt, tomato, oil — helpful to focus product/content decisions.
+12.43 minutes
 
-Top creators: user_04 (6 recipes), user_03 (5), etc.
 
+*   Diffculty Distribution : Grouping and counting the recipes that falls under the all difficulty levels like easy, medium, hard.
+
+| difficulty    | count |
+| ------------- | ----- |
+| easy          | 11    |
+| medium        | 11    |
+| hard          | 7     |
+| invalid_level | 1     |
+
+
+*   Cuisine vs Recipe Difficulty Distribution (%): Cuisine vs Recipe difficulty distributions tells about each cuisine's difficlty distribution (like % of hard,medium,easy levels) of each cusinies.
+
+
+| cuisine      | easy  | hard  | invalid_level | medium |
+| ------------ | ----- | ----- | ------------- | ------ |
+| Bengali      | 44.44 | 22.22 | 0.00          | 33.33  |
+| Hyderabadi   | 50.00 | 16.67 | 16.67         | 16.67  |
+| Punjabi      | 42.86 | 14.29 | 0.00          | 42.86  |
+| South Indian | 12.50 | 37.50 | 0.00          | 50.00  |
+
+
+*   Average Rating by Difficulty: 
+
+| difficulty    | avg_rating_by_difficulty |
+| ------------- | ------------------------ |
+| easy          | 4.168750                 |
+| hard          | 3.928889                 |
+| invalid_level | NaN                      |
+| medium        | 4.127083                 |
+
+
+*   Average Engagement by Difficulty
+
+| difficulty    | avg_engagement_by_difficulty |
+| ------------- | ---------------------------- |
+| easy          | 621.636364                   |
+| hard          | 712.857143                   |
+| invalid_level | 0.000000                     |
+| medium        | 534.636364                   |
+
+
+*   Correlation: Prep Time vs Total Likes
+  
+| Metric                  | Value                         |
+| ----------------------- | ----------------------------- |
+| Correlation coefficient | **0.033**                    |
+| Interpretation          | **Not strong correlation** |
+
+
+*   Top Viewed Recipes
+
+| recipe_id | title              | total_views |
+| --------- | ------------------ | ----------- |
+| r_006     | Veg Kurma          | 1354        |
+| r_011     | Egg Bhurji         | 1136        |
+| r_013     | Chicken Curry      | 1008        |
+| r_008     | Hyderabadi Biryani | 979         |
+| r_001     | Pav Bhaji          | 922         |
+| r_007     | Upma               | 817         |
+| r_026     | Pav Bhaji          | 738         |
+| r_005     | Pulao Special      | 731         |
+| r_028     | Idli Sambar        | 600         |
+| r_030     | Tomato Rasam       | 558         |
+
+
+*   Top Ingredients by Engagement
+
+| ingredient_name | engagement |
+| --------------- | ---------- |
+| rice            | 12888      |
+| garlic          | 12225      |
+| salt            | 9285       |
+| tomato          | 7980       |
+| oil             | 7935       |
+| onion           | 7330       |
+| pepper          | 6946       |
+| chilli          | 6253       |
+| ginger          | 5967       |
+
+
+*   Average Rating per Cuisine
+
+| cuisine      | avg_rating_by_cuisine |
+| ------------ | --------------------- |
+| Punjabi      | 4.36                  |
+| Hyderabadi   | 4.14                  |
+| South Indian | 3.94                  |
+| Bengali      | 3.92                  |
+
+
+*   Top Engagement Rate Recipes
+
+
+| recipe_id | title              | engagement_rate |
+| --------- | ------------------ | --------------- |
+| r_005     | Pulao Special      | 1078.00         |
+| r_007     | Upma               | 1012.00         |
+| r_019     | Hyderabadi Biryani | 513.00          |
+| r_026     | Pav Bhaji          | 440.50          |
+| r_008     | Hyderabadi Biryani | 397.00          |
+| r_011     | Egg Bhurji         | 382.00          |
+| r_022     | Pulao Special      | 378.50          |
+| r_017     | Idli Sambar        | 326.00          |
+| r_023     | Idli Sambar        | 325.33          |
+| r_006     | Veg Kurma          | 277.00          |
+
+
+*   Top Cook Attempt Recipes
+
+| recipe_id | title              | total_cook_attempts |
+| --------- | ------------------ | ------------------- |
+| r_006     | Veg Kurma          | 45                  |
+| r_011     | Egg Bhurji         | 22                  |
+| r_018     | Tomato Rasam       | 22                  |
+| r_007     | Upma               | 21                  |
+| r_023     | Idli Sambar        | 21                  |
+| r_005     | Pulao Special      | 21                  |
+| r_013     | Chicken Curry      | 19                  |
+| r_016     | Egg Bhurji         | 17                  |
+| r_001     | Pav Bhaji          | 17                  |
+| r_008     | Hyderabadi Biryani | 16                  |
+
+
+*   Top 5 Creators (Most Recipes Created)
+
+| created_by | recipe_count |
+| ---------- | ------------ |
+| user_04    | 6            |
+| user_03    | 5            |
+| user_10    | 5            |
+| user_07    | 5            |
+| user_09    | 4            |
+
+## 7. Insights Summary:
+  * #### a. The key findings regarding ingredient usage, recipe popularity, difficulty, and cuisine performance.
+    
+| Metric       | Key Finding | Detail | 
+| ------------ | -----       | -----  | 
+| Top Viewed Recipe     | The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).       | High views indicate high user interest and discovery, suggesting these recipes should be promoted. | 
+|Top Cook Attempts  | Veg Kurma (45 attempts) is the most frequently cooked recipe, showing high conversion from viewing to action.     | Recipes with high cook attempts are proven successes in the kitchen, indicating user satisfaction. |      
+| Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
+| Prep Time Correlation | The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.  | Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe." | 
+
+  * #### b. 🧅 Ingredient & Recipe Composition
+| Metric       | Key Finding | Detail | 
+| ------------ | -----       | -----  | 
+| Most Used Ingredient     | Rice (21 counts) is the most frequently used ingredient across all recipes, followed by Garlic (19) and Onion (16).       | These are the staples of the dataset, reflecting the regional cuisine focus.|
+|Highest Engaged Ingredients  | Rice (12,888 total engagement) and Garlic (12,225 total engagement) lead in terms of total views and likes across all recipes that contain them     | Recipes containing these base ingredients drive the most overall interaction on the platform.|      
+| Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
+| Average Prep Time | The average preparation time for all recipes is 12.43 minutes | This suggests the dataset is largely focused on quick, weeknight-friendly meals." | 
+| Top Authors | ,"User 04 has created the most recipes (6), closely followed by User 03, User 10, and User 07 (all with 5 recipes).| These authors are key content creators and should be incentivized to continue contributing.|
+
+* #### c. Difficulty & Cuisine Performance
+
+| Metric       | Key Finding | Detail | 
+| ------------ | -----       | -----  | 
+| Difficulty Distribution     | The dataset is split almost evenly between Easy (11) and Medium (11) recipes, with Hard (7) recipes making up the minority       | his provides a balanced mix for different user skill levels|
+|Engagement by Difficulty  | Hard recipes have the highest average engagement (712.86), followed by Easy recipes (621.64).    | This is counter-intuitive and suggests that users who view or like a difficult recipe are highly motivated, or that complex recipes attract more attention.|
+|Rating by Difficulty   |Easy recipes have the highest average rating (4.17), while Hard recipes have the lowest (3.93).| This aligns with expectations; simpler recipes are often less prone to cooking failure, resulting in higher user satisfaction.|
+|Cuisine Rating | Punjabi (4.36) recipes have the highest average user rating, while Bengali (3.92) recipes have the lowest average rating.| This indicates that users rate Punjabi recipes highly, suggesting a focus area for quality.|
+|Cuisine Composition | South Indian cuisine shows a bias towards Medium (50.00%) and Hard (37.50%) recipes, while Bengali and Punjabi are dominated by Easy recipes (44.44% and 42.86% respectively).|This shows the inherent complexity profile of different cuisines within your dataset.|
+
+* #### d. Data Quality Pipeline Validation
+  *  The pipeline successfully demonstrated integrity by isolating errors from the source data.
+
+  *  Error Detected: The validation script successfully flagged and identified one recipe with an invalid_level difficulty.
+
+  *  Impact: This isolated error confirms the necessity of the Validation step in catching synthetically introduced flaws, preventing the skewing of averages (like the Avg Rating for Hyderabadi cuisine) in final      reports.
+  
+* #### e. High-Quality Niche: Punjabi Cuisine
+  *  Analysis of average ratings shows a strong bias towards quality content in certain categories.
+
+  *  Highest Average Rating: Punjabi Cuisine (4.36)
+
+  *  High Accessibility: This cuisine is composed primarily of Easy (42.86%) and Medium (42.86%) recipes.
+
+  *  Takeaway: Punjabi content provides the best combination of high user satisfaction and accessibility. Content efforts should prioritize expanding recipes within this niche, and top authors (like User 04)          should be encouraged to contribute more Punjabi recipes.
+  
+
+## 8. Known Constraints & Limitations
+### i. Scalability: 
+  The transformation and validation logic loads entire files into memory (using Pandas/JSON). For datasets exceeding system memory (e.g., millions of recipes), a distributed framework like Spark or chunk-based     processing would be required.
+
+### ii. Firestore Read Costs: 
+  The extraction script performs a full collection scan (stream()). In a production environment with large datasets, this would be costly; incremental extraction based on updated_at timestamps would be preferred.
+
+### iii. Synthetic Data Bias: 
+  The data is randomly generated. While useful for testing pipeline mechanics, the correlations (e.g., "Do longer recipes get more likes?") may not reflect real-world human behavior.
+
+### iv. Atomic Transactions: 
+  The current ETL process is file-based. If the script fails halfway through writing CSVs, it may leave the data in an inconsistent state until re-run.
+
+## 📊 9. Visual Insights
+
+Below are the key insights generated from the analytics visualisations:
+#### 1.🥗 Top Ingredients Used
+
+<img width="3000" height="1800" alt="top_ingredients" src="https://github.com/user-attachments/assets/41235070-44d1-4645-a2e1-7e79ed915945" />
+
+Shows which ingredients appear most frequently across recipes, revealing common cooking patterns.
+
+#### 2.🎚️ Difficulty Distribution
+
+<img width="2100" height="2100" alt="difficulty_distribution" src="https://github.com/user-attachments/assets/170fdf07-a518-4539-972c-89ace0e0774d" />
+
+A breakdown of how many recipes are Easy, Medium, or Hard, indicating overall complexity of the dataset.
+
+
+#### 3. 🌍 Cuisine vs Difficulty
+
+<img width="3600" height="1800" alt="cuisine_vs_difficulty_heatmap" src="https://github.com/user-attachments/assets/8c4d353f-2b9e-4b30-b3ea-004ee592eee0" />
+
+
+Heatmap showing the distribution of recipe difficulties across different cuisines.
+
+#### 4. ⭐ Average Rating by Difficulty
+
+<img width="2400" height="1800" alt="avg_rating_by_difficulty" src="https://github.com/user-attachments/assets/ff838e7f-1d8d-48af-8f65-fde8e9c99e5f" />
+
+Highlights which difficulty level tends to receive higher average user ratings.
+
+#### 5.🔥 Engagement by Difficulty
+
+<img width="2400" height="1800" alt="engagement_by_difficulty" src="https://github.com/user-attachments/assets/a0eb4f22-d2bb-46e9-b897-6ab4e995eac5" />
+
+Shows engagement (likes + views) by difficulty level to understand user interest.
+
+#### 6.⏱️❤️ Prep Time vs Likes
+
+<img width="2700" height="2100" alt="preptime_vs_likes" src="https://github.com/user-attachments/assets/fac28c0a-601a-4d8c-9939-7b2401b548f8" />
+
+Scatter plot showing how preparation time influences recipe popularity.
+
+#### 7. 👀 Top Viewed Recipes
+
+<img width="3000" height="2100" alt="top_viewed_recipes" src="https://github.com/user-attachments/assets/25bfa9db-5c07-4b6d-8333-b1fec4f987c7" />
+
+Top 10 recipes that received the highest number of views.
+
+#### 8. 🧄🔥 Ingredient Engagement
+
+<img width="3000" height="2100" alt="top_ingredient_engagement" src="https://github.com/user-attachments/assets/5e42de9b-52b3-4a03-90a1-252072b6aac5" />
+
+Identifies which ingredients contribute most to recipe engagement.
+
+#### 9. 🍱 Average Rating per Cuisine
+
+<img width="3000" height="2100" alt="avg_rating_by_cuisine" src="https://github.com/user-attachments/assets/c79e7f00-3ebd-4d69-bd9a-fb32816c4f06" />
+
+Shows which cuisines have the highest average ratings from users.
+
+#### 10. 📈 Top Engagement Rate Recipes
+
+<img width="3000" height="2100" alt="top_engagement_rate" src="https://github.com/user-attachments/assets/bc7013e6-6e87-4892-ba60-d878aab1baf5" />
+
+Recipes with the highest engagement relative to number of servings.
+
+#### 11. 🍳 Most Cooked Recipes
+
+<img width="3000" height="2100" alt="top_cook_attempts" src="https://github.com/user-attachments/assets/0e1f5511-dd8b-4008-a4e3-339233b437f0" />
+
+Top recipes based on number of cook attempts recorded.
 
 
