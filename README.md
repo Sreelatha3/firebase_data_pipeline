@@ -3,16 +3,15 @@
 A complete end-to-end data engineering mini-pipeline built using Firebase Firestore as the source system, with ETL, validation, analytics, and documentation.
 
 ## Table of Contents
-- [Overview](#Overview)
-- [Architecture](#architecture)
-- [Data Model](#data-model)
-- [Data Model](#instructions-for-running-the-pipeline)
-- [Instructions for running the pipeline](#instructions-for-running-the-pipeline)
-- [ETL Process](#etl-process)
-- [Analytics](#analytics)
-- [Insights Summary](#insights-summary)
-- [Known Constraints & Limitations](#known-constraints-and-limitations)
-- [Visual Insights](#visual-insights)
+- [1. Overview](#Overview)
+- [2. Architecture](#architecture)
+- [3. Data Model](#data-model)
+- [4. Instructions for running the pipeline](#instructions-for-running-the-pipeline)
+- [5. ETL Process](#etl-process)
+- [6. Analytics](#analytics)
+- [7. Insights Summary](#insights-summary)
+- [8. Known Constraints & Limitations](#known-constraints-and-limitations)
+- [9. Visual Insights](#visual-insights)
 
 
 
