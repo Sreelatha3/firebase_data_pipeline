@@ -2,9 +2,9 @@ import pandas as pd
 from scipy.stats import pearsonr
 
 # Load CSV files
-recipes = pd.read_csv("data/normalized_json_data/recipes.csv")
-interactions = pd.read_csv("data/normalized_json_data/interactions.csv")
-ingredients = pd.read_csv("data/normalized_json_data/ingredients.csv")
+recipes = pd.read_csv("D:/Dev/firebase_pipeline/data/normalized_json_data/recipes.csv")
+interactions = pd.read_csv("D:/Dev/firebase_pipeline/data/normalized_json_data/interactions.csv")
+ingredients = pd.read_csv("D:/Dev/firebase_pipeline/data/normalized_json_data/ingredients.csv")
 
 # Aggregate interactions per recipe
 numeric_cols = ["views", "likes", "avg_rating", "cook_attempt"]
@@ -183,3 +183,7 @@ top_users = (
 
 print("\nTop 5 users or authors that created most recipes :")
 print(top_users.head(5))
+
+recipes.to_csv("D:/Dev/firebase_pipeline/outputs/data/recipes_processed.csv", index=False)
+top_ingredients.to_csv("D:/Dev/firebase_pipeline/outputs/data/top_ingredients.csv", index=False)
+
