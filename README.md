@@ -365,6 +365,13 @@ The pipeline converts your nested document data into a structured relational for
 |Cuisine Rating | Punjabi (4.36) recipes have the highest average user rating, while Bengali (3.92) recipes have the lowest average rating.| This indicates that users rate Punjabi recipes highly, suggesting a focus area for quality.|
 |Cuisine Composition | South Indian cuisine shows a bias towards Medium (50.00%) and Hard (37.50%) recipes, while Bengali and Punjabi are dominated by Easy recipes (44.44% and 42.86% respectively).|This shows the inherent complexity profile of different cuisines within your dataset.|
 
+* #### d. Data Quality Pipeline Validation
+  *  The pipeline successfully demonstrated integrity by isolating errors from the source data.
+
+  *  Error Detected: The validation script successfully flagged and identified one recipe with an invalid_level difficulty.
+
+  *  Impact: This isolated error confirms the necessity of the Validation step in catching synthetically introduced flaws, preventing the skewing of averages (like the Avg Rating for Hyderabadi cuisine) in final      reports.
+
 
 ## 8. Known Constraints & Limitations
 ### i. Scalability: 
