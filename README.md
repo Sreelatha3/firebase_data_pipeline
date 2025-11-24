@@ -21,10 +21,6 @@ It includes:
 
 <img width="2153" height="2924" alt="Untitled diagram-2025-11-24-052248" src="https://github.com/user-attachments/assets/3be4704b-8adf-4e58-8582-5f384fa11e99" />
 
-## Project Structure: 
-
-<img width="783" height="652" alt="image" src="https://github.com/user-attachments/assets/48cd9a2d-6f44-479b-9560-aae8085611c7" />
-
 
 ### Data Model:
 
