@@ -338,6 +338,13 @@ The pipeline converts your nested document data into a structured relational for
 
 ## Insights Summary:
   *  The key findings regarding ingredient usage, recipe popularity, difficulty, and cuisine performance.
+    
+| Metric       | Key Finding | Detail | 
+| ------------ | -----       | -----  | 
+| Top Viewed Recipe     | The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).       | 22.22 | 
+| Hyderabadi   | 50.00       | 16.67 |      
+| Punjabi      | 42.86       | 14.29 |
+| South Indian | 12.50       | 37.50 | 
 
 Metric,Key Finding,Detail
 Top Viewed Recipe,"The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).","High views indicate high user interest and discovery, suggesting these recipes should be promoted."
