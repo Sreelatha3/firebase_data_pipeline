@@ -371,7 +371,16 @@ The pipeline converts your nested document data into a structured relational for
   *  Error Detected: The validation script successfully flagged and identified one recipe with an invalid_level difficulty.
 
   *  Impact: This isolated error confirms the necessity of the Validation step in catching synthetically introduced flaws, preventing the skewing of averages (like the Avg Rating for Hyderabadi cuisine) in final      reports.
+  
+* #### e. High-Quality Niche: Punjabi Cuisine
+  *  Analysis of average ratings shows a strong bias towards quality content in certain categories.
 
+  *  Highest Average Rating: Punjabi Cuisine (4.36)
+
+  *  High Accessibility: This cuisine is composed primarily of Easy (42.86%) and Medium (42.86%) recipes.
+
+  *  Takeaway: Punjabi content provides the best combination of high user satisfaction and accessibility. Content efforts should prioritize expanding recipes within this niche, and top authors (like User 04)          should be encouraged to contribute more Punjabi recipes.
+  
 
 ## 8. Known Constraints & Limitations
 ### i. Scalability: 
