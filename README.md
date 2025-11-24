@@ -337,7 +337,7 @@ The pipeline converts your nested document data into a structured relational for
 | user_09    | 4            |
 
 ## 7. Insights Summary:
-  *  The key findings regarding ingredient usage, recipe popularity, difficulty, and cuisine performance.
+  * #### a. The key findings regarding ingredient usage, recipe popularity, difficulty, and cuisine performance.
     
 | Metric       | Key Finding | Detail | 
 | ------------ | -----       | -----  | 
@@ -345,6 +345,18 @@ The pipeline converts your nested document data into a structured relational for
 |Top Cook Attempts  | Veg Kurma (45 attempts) is the most frequently cooked recipe, showing high conversion from viewing to action.     | Recipes with high cook attempts are proven successes in the kitchen, indicating user satisfaction. |      
 | Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
 | Prep Time Correlation | The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.  | Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe." | 
+
+  * #### b. 🧅 Ingredient & Recipe Composition
+| Metric       | Key Finding | Detail | 
+| ------------ | -----       | -----  | 
+| Most Used Ingredient     | Rice (21 counts) is the most frequently used ingredient across all recipes, followed by Garlic (19) and Onion (16).       | These are the staples of the dataset, reflecting the regional cuisine focus.|
+|Highest Engaged Ingredients  | Rice (12,888 total engagement) and Garlic (12,225 total engagement) lead in terms of total views and likes across all recipes that contain them     | Recipes containing these base ingredients drive the most overall interaction on the platform.|      
+| Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
+| Average Prep Time | The average preparation time for all recipes is 12.43 minutes | This suggests the dataset is largely focused on quick, weeknight-friendly meals." | 
+| Top Authors | ,"User 04 has created the most recipes (6), closely followed by User 03, User 10, and User 07 (all with 5 recipes).| These authors are key content creators and should be incentivized to continue contributing.|
+
+
+
 
 ## 8. Known Constraints & Limitations
 ### i. Scalability: 
