@@ -312,7 +312,7 @@ The pipeline converts your nested document data into a structured relational for
   
   *  Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
   
-  *  $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
+### $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
 
 ## 📊 Visual Insights
 
