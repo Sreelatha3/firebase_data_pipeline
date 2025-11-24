@@ -56,6 +56,9 @@ It includes:
        * avg_rating : average rating of the recipe given by users
        * likes : Number of users that liked the recipe (wuth recipe_id)
        * views : Number of users that viewed the recipe 
+       
+  The users can created any number of recipes, therefore users and recipes have one to many relationship (or) 1 to N relationship
+  The recipes can have 
     
 ##### Normalized Output (collections converted into tables) -CSV Schema:
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
