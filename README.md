@@ -127,10 +127,63 @@ It includes:
            python analytics.py
            python visualisation.py
      
-  Generate insights and visualization charts.
+  *  ##### ix. Generate insights and visualization charts.
+  
   output:
-  *    1. Top ingredients : Frequently used ingredients whose frequency is greater than 5 
+  *    i. Top ingredients : Frequently used ingredients whose frequency is greater than 5 
+  *   ii. Average Prep Time of all the recipes available:
+  *   iii. Diffculty Distribution : Grouping and counting the recipes that falls under the all difficulty levels like easy, medium, hard.
+  *   iv. Cuisine vs Recipe Difficulty Distribution (%): Cuisine vs Recipe difficulty distributions tells about each cuisine's difficlty distribution (like % of hard,medium,easy levels) of each cusinies.
+  *   v. Average Rating by Difficulty
+  *   vi. Average Engagement by Difficulty
+  *   vii. Correlation: Prep Time vs Total 
+  *   Top Viewed Recipes
+  *   Top Ingredients by Engagement
+  *   Average Rating per Cuisine
+  *   Top Engagement Rate Recipes
+  *   Top Cook Attempt Recipes
+  *   Top 5 Creators (Most Recipes Created)
 
+
+
+## 5. ETL Process:
+The pipeline converts your nested document data into a structured relational format across three main stages:
+<img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/f1c46840-a6b2-4df9-a708-97cb71e426e7" />
+  *  figure 3: ETL Process
+
+#### i. Extraction (E) :  
+  *  Tool: export_data.py
+
+  *  Action: The script connects to the Firebase Firestore database. It streams the raw document data from the collections (recipes, users, interactions).
+
+  *  Output: Raw JSON Files are created locally. The data is still denormalized, containing nested lists (ingredients, steps), exactly as it appeared in Firestore.
+
+#### ii. Transformation (T):
+  *  Tool: transformation.py
+
+  *  Action: This core stage reads the raw JSON and enforces the relational schema:
+
+  *  Normalization: It unnests the complex list fields (like ingredients and steps) and separates them into their own tables (ingredients.csv, steps.csv), using the recipe_id to maintain the relationship.
+
+  *  Cleaning: It standardizes field names, coerces data types (e.g., ensuring string representations of numbers become actual numbers), and handles missing/inconsistent values.
+
+  *  Output: A set of clean, normalized CSV files (recipes.csv, ingredients.csv, steps.csv, interactions.csv). It also outputs a Transformation Report logging any structural or schema issues encountered.
+  
+#### iii. Loading (L) :
+  *  Tool: Implicit (The local file system)
+  
+  *  Action: The clean, normalized CSVs act as the final analytical store (the Load destination).
+  
+  *  The downstream scripts, validate_data.py and analytics.py, load these files into Pandas DataFrames.
+  
+  *  Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
+  
+### $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
+
+
+## Analytics:
+
+*  Top ingredients : Frequently used ingredients whose frequency is greater than 5
 
 | ingredient_name | count |
 | --------------- | ----- |
@@ -283,39 +336,14 @@ It includes:
 | user_07    | 5            |
 | user_09    | 4            |
 
-## 5. ETL Process:
-The pipeline converts your nested document data into a structured relational format across three main stages:
-<img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/f1c46840-a6b2-4df9-a708-97cb71e426e7" />
-  *  figure 3: ETL Process
+## Insights Summary:
+  *  The key findings regarding ingredient usage, recipe popularity, difficulty, and cuisine performance.
 
-#### i. Extraction (E) :  
-  *  Tool: export_data.py
-
-  *  Action: The script connects to the Firebase Firestore database. It streams the raw document data from the collections (recipes, users, interactions).
-
-  *  Output: Raw JSON Files are created locally. The data is still denormalized, containing nested lists (ingredients, steps), exactly as it appeared in Firestore.
-
-#### ii. Transformation (T):
-  *  Tool: transformation.py
-
-  *  Action: This core stage reads the raw JSON and enforces the relational schema:
-
-  *  Normalization: It unnests the complex list fields (like ingredients and steps) and separates them into their own tables (ingredients.csv, steps.csv), using the recipe_id to maintain the relationship.
-
-  *  Cleaning: It standardizes field names, coerces data types (e.g., ensuring string representations of numbers become actual numbers), and handles missing/inconsistent values.
-
-  *  Output: A set of clean, normalized CSV files (recipes.csv, ingredients.csv, steps.csv, interactions.csv). It also outputs a Transformation Report logging any structural or schema issues encountered.
-  
-#### iii. Loading (L) :
-  *  Tool: Implicit (The local file system)
-  
-  *  Action: The clean, normalized CSVs act as the final analytical store (the Load destination).
-  
-  *  The downstream scripts, validate_data.py and analytics.py, load these files into Pandas DataFrames.
-  
-  *  Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
-  
-### $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
+Metric,Key Finding,Detail
+Top Viewed Recipe,"The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).","High views indicate high user interest and discovery, suggesting these recipes should be promoted."
+Top Cook Attempts,"Veg Kurma (45 attempts) is the most frequently cooked recipe, showing high conversion from viewing to action.","Recipes with high cook attempts are proven successes in the kitchen, indicating user satisfaction."
+Top Engagement Rate,"Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size.",This metric is essential for identifying recipes that generate high user interaction efficiency.
+Prep Time Correlation,"The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.","Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe."
 
 ## 📊 Visual Insights
 
