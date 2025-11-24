@@ -283,6 +283,34 @@ It includes:
 | user_07    | 5            |
 | user_09    | 4            |
 
+## 5. ETL Process:
+The pipeline converts your nested document data into a structured relational format across three main stages:
+#### i. Extraction (E) :  
+  *  Tool: export_data.py
+
+  *  Action: The script connects to the Firebase Firestore database. It streams the raw document data from the collections (recipes, users, interactions).
+
+  *  Output: Raw JSON Files are created locally. The data is still denormalized, containing nested lists (ingredients, steps), exactly as it appeared in Firestore.
+
+#### ii. Transformation (T):
+  *  Tool: transformation.py
+
+  *  Action: This core stage reads the raw JSON and enforces the relational schema:
+
+  *  Normalization: It unnests the complex list fields (like ingredients and steps) and separates them into their own tables (ingredients.csv, steps.csv), using the recipe_id to maintain the relationship.
+
+  *  Cleaning: It standardizes field names, coerces data types (e.g., ensuring string representations of numbers become actual numbers), and handles missing/inconsistent values.
+
+  *  Output: A set of clean, normalized CSV files (recipes.csv, ingredients.csv, steps.csv, interactions.csv). It also outputs a Transformation Report logging any structural or schema issues encountered.
+  
+#### iii. Loading (L) :
+Tool: Implicit (The local file system)
+
+Action: The clean, normalized CSVs act as the final analytical store (the Load destination).
+
+The downstream scripts, validate_data.py and analytics.py, load these files into Pandas DataFrames.
+
+Output: The data is staged locally for immediate consumption by the Quality Assurance and Analysis layers.
 
 ## 📊 Visual Insights
 
