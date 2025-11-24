@@ -26,7 +26,7 @@ It includes:
 <img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
 
 *   The pipeline transforms the NoSQL Document structure into a Relational Star Schema.
-##### Raw Source:
+##### Raw Data ( Data on the firestore database - collections ):
    * Users: User profile metadata. (user_id as the document id)
        * name : Name of the User
        * email : Email id of the user
