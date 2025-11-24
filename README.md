@@ -17,6 +17,10 @@ It includes:
 
 * Analytics & Insights
 
+
+## 2. Deliverables : 
+
+
 ## 2. Architecure Diagram
 
 <img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/b73b4d2b-5813-4f5d-be48-1c55870055a6" />
