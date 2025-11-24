@@ -28,6 +28,9 @@ It includes:
 *   The pipeline transforms the NoSQL Document structure into a Relational Star Schema.
 #### Raw Source:
    * Recipes: Documents containing nested arrays for ingredients and steps.
+   * Users: User profile metadata.
+   * Interactions: Event logs (views, likes, ratings).
+#### Normalized Output (CSV Schema):
 
 ## 📊 Visual Insights
 
