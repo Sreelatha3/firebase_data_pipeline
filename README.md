@@ -127,8 +127,7 @@ It includes:
            python analytics.py
            python visualisation.py
      
-  *  ##### ix. Generate insights and visualization charts.
-  
+  Generates insights and visualization charts.
   output:
   *    i. Top ingredients : Frequently used ingredients whose frequency is greater than 5 
   *   ii. Average Prep Time of all the recipes available:
