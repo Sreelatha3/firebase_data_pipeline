@@ -25,7 +25,7 @@ It includes:
 
 ### Data Model:
 <img width="3485" height="2423" alt="firebase_erd" src="https://github.com/user-attachments/assets/6f5f7d0a-6336-4299-92e7-1a09f15fe55b" />
-* figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
+*  figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
 
 ##### Raw Data ( Data on the firestore database - collections & documents):
    * Users: User profile metadata. (user_id as the document id)
