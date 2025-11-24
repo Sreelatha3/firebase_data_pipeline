@@ -81,6 +81,7 @@ It includes:
         python version >= 3.9
         google firebase credentials ( with firestore enabled)
   * ii. Install the following dependencies:
+    
         ```bash
               pip install firebase-admin
               pip install pandas
