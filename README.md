@@ -19,7 +19,7 @@ It includes:
 
 ## Architecure Diagram
 
-<img width="2153" height="2924" alt="Untitled diagram-2025-11-24-052248" src="https://github.com/user-attachments/assets/3be4704b-8adf-4e58-8582-5f384fa11e99" />
+<img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/b73b4d2b-5813-4f5d-be48-1c55870055a6" />
 
 
 ### Data Model:
