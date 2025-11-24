@@ -181,7 +181,7 @@ The pipeline converts your nested document data into a structured relational for
 ### $$\text{Data Source} \xrightarrow{\text{E/T/L}} \text{Clean Data Store} \xrightarrow{\text{Analytics}} \text{Reports/Dashboards}$$
 
 
-## Analytics:
+## 6. Analytics:
 
 *  Top ingredients : Frequently used ingredients whose frequency is greater than 5
 
@@ -336,7 +336,7 @@ The pipeline converts your nested document data into a structured relational for
 | user_07    | 5            |
 | user_09    | 4            |
 
-## Insights Summary:
+## 7. Insights Summary:
   *  The key findings regarding ingredient usage, recipe popularity, difficulty, and cuisine performance.
     
 | Metric       | Key Finding | Detail | 
@@ -346,7 +346,7 @@ The pipeline converts your nested document data into a structured relational for
 | Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
 | Prep Time Correlation | The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.  | Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe." | 
 
-## Known Constraints & Limitations
+## 8. Known Constraints & Limitations
 ### i. Scalability: 
   The transformation and validation logic loads entire files into memory (using Pandas/JSON). For datasets exceeding system memory (e.g., millions of recipes), a distributed framework like Spark or chunk-based     processing would be required.
 
@@ -359,7 +359,7 @@ The pipeline converts your nested document data into a structured relational for
 ### iv. Atomic Transactions: 
   The current ETL process is file-based. If the script fails halfway through writing CSVs, it may leave the data in an inconsistent state until re-run.
 
-## 📊 Visual Insights
+## 📊 9. Visual Insights
 
 Below are the key insights generated from the analytics visualisations:
 #### 1.🥗 Top Ingredients Used
