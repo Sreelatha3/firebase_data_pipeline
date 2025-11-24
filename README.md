@@ -129,7 +129,7 @@ It includes:
      
   Generate insights and visualization charts.
   output:
-  *    Top ingredients
+  *    1. Top ingredients : Frequently used ingredients whose frequency is greater than 5 
 
 
 | ingredient_name | count |
@@ -145,12 +145,12 @@ It includes:
 | ginger          | 8     |
 
 
-*   Average Prep Time
+*   Average Prep Time of all the recipes available:
 
 12.43 minutes
 
 
-*   Diffculty Distribution
+*   Diffculty Distribution : Grouping and counting the recipes that falls under the all difficulty levels like easy, medium, hard.
 
 | difficulty    | count |
 | ------------- | ----- |
@@ -160,7 +160,7 @@ It includes:
 | invalid_level | 1     |
 
 
-*   Cuisine vs Recipe Difficulty Distribution (%)
+*   Cuisine vs Recipe Difficulty Distribution (%): Cuisine vs Recipe difficulty distributions tells about each cuisine's difficlty distribution (like % of hard,medium,easy levels) of each cusinies.
 
 
 | cuisine      | easy  | hard  | invalid_level | medium |
@@ -171,7 +171,7 @@ It includes:
 | South Indian | 12.50 | 37.50 | 0.00          | 50.00  |
 
 
-*   Average Rating by Difficulty
+*   Average Rating by Difficulty: 
 
 | difficulty    | avg_rating_by_difficulty |
 | ------------- | ------------------------ |
