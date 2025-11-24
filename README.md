@@ -285,6 +285,9 @@ It includes:
 
 ## 5. ETL Process:
 The pipeline converts your nested document data into a structured relational format across three main stages:
+<img width="2265" height="2204" alt="firebase_elt_architecture" src="https://github.com/user-attachments/assets/f1c46840-a6b2-4df9-a708-97cb71e426e7" />
+  *  figure 3: ETL Process
+
 #### i. Extraction (E) :  
   *  Tool: export_data.py
 
