@@ -2,6 +2,14 @@
 
 A complete end-to-end data engineering mini-pipeline built using Firebase Firestore as the source system, with ETL, validation, analytics, and documentation.
 
+## Deliverables:
+- [Source files for ETL](src/ETL)
+- [Source file for Validation](src/ETL/validate/validate_data.py)
+- [Normalized CSV output](data/normalized_json_data)
+- [Analytics Summary](Analytics_Summary.pdf)
+- [README.md](README.md)
+- [Visualisation Insights](#9-visual-insights)
+
 ## Table of Contents
 - [1. Overview](#1-overview)
 - [2. Architecture](#2-architecture)
