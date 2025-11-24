@@ -31,7 +31,14 @@ It includes:
    * Users: User profile metadata.
    * Interactions: Event logs (views, likes, ratings).
 #### Normalized Output (CSV Schema):
-  * 1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
+  1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
+     *  Primary Key: recipe_id
+  2. ingredients.csv: Linked ingredients.
+     *  Foreign Key: recipe_id
+  3. steps.csv: Cooking instructions with order.
+     *  Foreign Key: recipe_id
+  4. interactions.csv: User engagement metrics.
+     *  Foreign Key: recipe_id
   
 
 ## 📊 Visual Insights
