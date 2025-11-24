@@ -101,19 +101,33 @@ It includes:
     Dump the Firestore collections (recipes, users, interactions) into local raw JSON files.
 
             python export_data.py
-            
+
+      This step extracts all recipe, user, and interaction documents from Firebase Firestore and saves them into JSON files. The script (export_data.py) connects to Firestore using the service account key, reads       each collection, converts Firestore-specific types (like timestamps) into standard JSON-friendly formats, and writes the results into the data/exported_data/ folder.
+      These exported JSON files act as the raw input for the next transformation step in the data pipeline      
       output: The output has 3 files that is stored in data/exported_data folder with names raw_recipes.json, raw_users.json, raw_interactions.json.
+      
   * ##### vi. Transformation (Transform json data to the csv):
     Parse the raw JSON, unnest complex arrays (Ingredients, Steps), and normalize the schema into CSV format.
 
             python transformation.py
 
-    This step extracts all recipe, user, and interaction documents from Firebase Firestore and saves them into JSON files. The script (export_data.py) connects to Firestore using the service account key, reads       each collection, converts Firestore-specific types (like timestamps) into standard JSON-friendly formats, and writes the results into the data/exported_data/ folder.
-    These exported JSON files act as the raw input for the next transformation step in the ETL pipeline
+    This step takes the raw JSON data exported from Firestore and converts it into clean, structured, and fully normalized CSV tables. The transformation script (transformation.py) fixes data types, handles          missing or inconsistent fields, splits nested lists (ingredients, steps) into separate tables, and outputs four normalized CSV files: recipes.csv, ingredients.csv, steps.csv, and interactions.csv.
+    These CSVs form the standardized dataset used for validation and analytics.
     output: The output has 3 files that is stored in the data/normalized_json_data with names ingredients.csv, interactions.csv, recipes.csv, users.csv and also transformation report.
 
-   * ##### vii.  
-            
+   * ##### vii.  Validation (Quality Assurance):
+
+           python validate_data.py
+           
+     Run the data validator to identify schema violations, missing fields, or logical errors (e.g., negative cooking times).
+     output: A validation report is generated and stored under the following path: data/validation_report/validation_report.json
+
+   * ##### viii. : Analytics & Visualization (Analysis)
+
+           python analytics.py
+           python visualisation.py
+     
+  Generate insights and visualization charts.
 
 
 ## 📊 Visual Insights
