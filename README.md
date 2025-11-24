@@ -95,7 +95,25 @@ It includes:
 
              python insert_my_recipe.py # inserts your own recipe).
              python insert_synthetic_data.py #inserts synthetic data into the users, recipes and interactions collections
-  * 
+      output: The insert_my_recipe.py will insert spaghetti pasta recipe and insert_synthetic_data.py inserts 19 other recipes, 10 users and 20 user interactions.
+
+  * ##### v. Export Firestore collections to JSON
+    Dump the Firestore collections (recipes, users, interactions) into local raw JSON files.
+
+            python export_data.py
+            
+      output: The output has 3 files that is stored in data/exported_data folder with names raw_recipes.json, raw_users.json, raw_interactions.json.
+  * ##### vi. Transformation (Transform json data to the csv):
+    Parse the raw JSON, unnest complex arrays (Ingredients, Steps), and normalize the schema into CSV format.
+
+            python transformation.py
+
+    This step extracts all recipe, user, and interaction documents from Firebase Firestore and saves them into JSON files. The script (export_data.py) connects to Firestore using the service account key, reads       each collection, converts Firestore-specific types (like timestamps) into standard JSON-friendly formats, and writes the results into the data/exported_data/ folder.
+    These exported JSON files act as the raw input for the next transformation step in the ETL pipeline
+    output: The output has 3 files that is stored in the data/normalized_json_data with names ingredients.csv, interactions.csv, recipes.csv, users.csv and also transformation report.
+
+   * ##### vii.  
+            
 
 
 ## 📊 Visual Insights
@@ -169,8 +187,7 @@ Recipes with the highest engagement relative to number of servings.
 
 Top recipes based on number of cook attempts recorded.
 
-#### Deliverables:
-https://docs.google.com/document/d/e/2PACX-1vRTeByDKKNw697PbeUXoKQLmkC8B80OK-6OZLMCTnuVRY1R3lbJWNTUvmTd5K1-CUCpqJJMUxKqEJM1/pub
+
 ## Setup and Installation:
 
 #### 1. Setup firebase account and get the firestore credentials and save it under the name 'service_account_key.json' 
