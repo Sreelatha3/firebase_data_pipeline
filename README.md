@@ -27,8 +27,17 @@ It includes:
 
 *   The pipeline transforms the NoSQL Document structure into a Relational Star Schema.
 ##### Raw Source:
-   * Recipes: Documents containing nested arrays for ingredients and steps.
-       *  
+   * Recipes: Documents containing recipe data (document id as the recipe_id)
+       * title : Name of the recipe
+       * description : Description about the recipe
+       * servings : How many people can eat the recipe ( since the ingredients are quantified therefore, the servings can calculated vice versa)
+       * prep_time_minutes : Time taken to prepare the items that are needed to cook the recipe
+       * cook_time_minutes : Time taken to cook the recipe
+       * difficulty : Difficulty level (easy, medium, hard) of the recipe
+       * cuisine : tells about the cuisine category the recipe falls under (ex: Italian etc)
+       * tags : talks about the recipe taste and other qualities these tags(ex: spicy, sweet etc) are helpful for search operations
+       * ingredients : nested array that consists of ingredient's data - name of the ingredient, quantity of the ingredient, unit - units of the quantity
+       * steps : nested array that consists of step order and instructions
    * Users: User profile metadata.
    * Interactions: Event logs (views, likes, ratings).
 ##### Normalized Output (CSV Schema):
