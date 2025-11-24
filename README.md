@@ -82,7 +82,7 @@ It includes:
         google firebase credentials ( with firestore enabled)
   * ii. Install the following dependencies:
     
-        ```bash
+        
               pip install firebase-admin
               pip install pandas
               pip install numpy
