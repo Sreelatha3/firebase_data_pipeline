@@ -29,6 +29,7 @@ It includes:
 *  figure 2: ERD (Entity Relationship Diagram of the entities involved in the elt pipeline - NoSQL documents normalized into the tables)
 
 ##### Raw Data ( Data on the firestore database - collections & documents):
+  ###### Entities:
    * Users: User profile metadata. (user_id as the document id)
        * name : Name of the User
        * email : Email id of the user
@@ -56,9 +57,12 @@ It includes:
        * avg_rating : average rating of the recipe given by users
        * likes : Number of users that liked the recipe (wuth recipe_id)
        * views : Number of users that viewed the recipe 
-       
-  The users can created any number of recipes, therefore users and recipes have one to many relationship (or) 1 to N relationship
-  The recipes can have 
+
+      ###### Relationships:
+       * users - recipes : An user can create any number of recipes ( 1:N or One-to-many relationship between user and recipes). 
+       * recipes - ingredients : A recipe can have any number of ingredients ( 1:N or One-to-many relationship between recipes and ingredients).
+       * recipes - steps: A recipe can have any number of steps ( 1:N or One-to-many relationship between recipes and steps.)
+       * recipes - interactions : A recipe can have many interactions like views, likes, cook_attempts. 
     
 ##### Normalized Output (collections converted into tables) -CSV Schema:
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
@@ -69,7 +73,10 @@ It includes:
      *  Foreign Key: recipe_id
   4. interactions.csv: User engagement metrics.
      *  Foreign Key: recipe_id
-  
+
+
+## Instructions for running the pipeline:
+
 
 ## 📊 Visual Insights
 
