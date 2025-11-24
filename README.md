@@ -355,7 +355,15 @@ The pipeline converts your nested document data into a structured relational for
 | Average Prep Time | The average preparation time for all recipes is 12.43 minutes | This suggests the dataset is largely focused on quick, weeknight-friendly meals." | 
 | Top Authors | ,"User 04 has created the most recipes (6), closely followed by User 03, User 10, and User 07 (all with 5 recipes).| These authors are key content creators and should be incentivized to continue contributing.|
 
+* #### c.
 
+| Metric       | Key Finding | Detail | 
+| ------------ | -----       | -----  | 
+| Difficulty Distribution     | The dataset is split almost evenly between Easy (11) and Medium (11) recipes, with Hard (7) recipes making up the minority       | his provides a balanced mix for different user skill levels|
+|Engagement by Difficulty  | Hard recipes have the highest average engagement (712.86), followed by Easy recipes (621.64).    | This is counter-intuitive and suggests that users who view or like a difficult recipe are highly motivated, or that complex recipes attract more attention.|
+|Rating by Difficulty   |Easy recipes have the highest average rating (4.17), while Hard recipes have the lowest (3.93).| This aligns with expectations; simpler recipes are often less prone to cooking failure, resulting in higher user satisfaction.|
+|Cuisine Rating | Punjabi (4.36) recipes have the highest average user rating, while Bengali (3.92) recipes have the lowest average rating.| This indicates that users rate Punjabi recipes highly, suggesting a focus area for quality.|
+|Cuisine Composition | South Indian cuisine shows a bias towards Medium (50.00%) and Hard (37.50%) recipes, while Bengali and Punjabi are dominated by Easy recipes (44.44% and 42.86% respectively).|This shows the inherent complexity profile of different cuisines within your dataset.|
 
 
 ## 8. Known Constraints & Limitations
