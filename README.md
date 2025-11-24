@@ -31,6 +31,8 @@ It includes:
    * Users: User profile metadata.
    * Interactions: Event logs (views, likes, ratings).
 #### Normalized Output (CSV Schema):
+  * 1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
+  
 
 ## 📊 Visual Insights
 
