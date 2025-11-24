@@ -346,6 +346,19 @@ The pipeline converts your nested document data into a structured relational for
 | Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
 | Prep Time Correlation | The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.  | Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe." | 
 
+## Known Constraints & Limitations
+### i. Scalability: 
+  The transformation and validation logic loads entire files into memory (using Pandas/JSON). For datasets exceeding system memory (e.g., millions of recipes), a distributed framework like Spark or chunk-based     processing would be required.
+
+### ii. Firestore Read Costs: 
+  The extraction script performs a full collection scan (stream()). In a production environment with large datasets, this would be costly; incremental extraction based on updated_at timestamps would be preferred.
+
+### iii. Synthetic Data Bias: 
+  The data is randomly generated. While useful for testing pipeline mechanics, the correlations (e.g., "Do longer recipes get more likes?") may not reflect real-world human behavior.
+
+### iv. Atomic Transactions: 
+  The current ETL process is file-based. If the script fails halfway through writing CSVs, it may leave the data in an inconsistent state until re-run.
+
 ## 📊 Visual Insights
 
 Below are the key insights generated from the analytics visualisations:
