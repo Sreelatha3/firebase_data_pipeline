@@ -27,8 +27,16 @@ It includes:
 
 *   The pipeline transforms the NoSQL Document structure into a Relational Star Schema.
 ##### Raw Source:
+   * Users: User profile metadata. (user_id as the document id)
+       * name : Name of the User
+       * email : Email id of the user
+       * location : Location of the user
+       * signup_date : User signup date (assuming the recipes are hosted on app or web)
+       * user_id : Unique Identifier for the user (user_id and the user document id are same)
    * Recipes: Documents containing recipe data (document id as the recipe_id - Unique Identifier for each of the recipe)
        * title : Name of the recipe
+       * created_by : Unique identifier that refers to the user_id in the users collection's user_id
+       * created_at : Time of creation of the recipe on the web/app by the user
        * description : Description about the recipe
        * servings : How many people can eat the recipe ( since the ingredients are quantified therefore, the servings can calculated vice versa)
        * prep_time_minutes : Time taken to prepare the items that are needed to cook the recipe
@@ -38,12 +46,7 @@ It includes:
        * tags : Talks about the recipe taste and other qualities these tags(ex: spicy, sweet etc) are helpful for search operations
        * ingredients : Nested array that consists of ingredient's data - name of the ingredient, quantity of the ingredient, unit - units of the quantity
        * steps : Nested array that consists of step order and instructions
-   * Users: User profile metadata. (user_id as the document id)
-       * name : Name of the User
-       * email : Email id of the user
-       * location : Location of the user
-       * signup_date : User signup date (assuming the recipes are hosted on app or web)
-       * user_id : Unique Identifier for the user (user_id and the user document id are same)
+  
    * Interactions: Event logs (views, likes, ratings).
 ##### Normalized Output (CSV Schema):
   1. recipes.csv: Contains recipe metadata (Title, Cuisine, Difficulty, Prep Time).
