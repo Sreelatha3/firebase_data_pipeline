@@ -355,7 +355,7 @@ The pipeline converts your nested document data into a structured relational for
 | Average Prep Time | The average preparation time for all recipes is 12.43 minutes | This suggests the dataset is largely focused on quick, weeknight-friendly meals." | 
 | Top Authors | ,"User 04 has created the most recipes (6), closely followed by User 03, User 10, and User 07 (all with 5 recipes).| These authors are key content creators and should be incentivized to continue contributing.|
 
-* #### c.
+* #### c. Difficulty & Cuisine Performance
 
 | Metric       | Key Finding | Detail | 
 | ------------ | -----       | -----  | 
