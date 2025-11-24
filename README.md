@@ -341,16 +341,10 @@ The pipeline converts your nested document data into a structured relational for
     
 | Metric       | Key Finding | Detail | 
 | ------------ | -----       | -----  | 
-| Top Viewed Recipe     | The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).       | 22.22 | 
-| Hyderabadi   | 50.00       | 16.67 |      
-| Punjabi      | 42.86       | 14.29 |
-| South Indian | 12.50       | 37.50 | 
-
-Metric,Key Finding,Detail
-Top Viewed Recipe,"The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).","High views indicate high user interest and discovery, suggesting these recipes should be promoted."
-Top Cook Attempts,"Veg Kurma (45 attempts) is the most frequently cooked recipe, showing high conversion from viewing to action.","Recipes with high cook attempts are proven successes in the kitchen, indicating user satisfaction."
-Top Engagement Rate,"Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size.",This metric is essential for identifying recipes that generate high user interaction efficiency.
-Prep Time Correlation,"The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.","Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe."
+| Top Viewed Recipe     | The most viewed recipe is Veg Kurma (1,354 views), followed closely by Egg Bhurji (1,136 views).       | High views indicate high user interest and discovery, suggesting these recipes should be promoted. | 
+|Top Cook Attempts  | Veg Kurma (45 attempts) is the most frequently cooked recipe, showing high conversion from viewing to action.     | Recipes with high cook attempts are proven successes in the kitchen, indicating user satisfaction. |      
+| Top Engagement Rate    | Pulao Special has an extremely high engagement rate (1078.00), likely due to a combination of high interaction relative to its small serving size    | This metric is essential for identifying recipes that generate high user interaction efficiency. |
+| Prep Time Correlation | The correlation between prep time and total likes is −0.093, indicating No meaningful correlation.  | Users are generally not deterred or attracted by the preparation time when deciding to ""like"" a recipe." | 
 
 ## 📊 Visual Insights
 
